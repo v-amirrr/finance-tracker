@@ -1,24 +1,23 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import { useSignup } from "../hooks/useSignup";
+
 import styles from "./Signup.module.css";
 
 const Signup = () => {
 
-    const [Name, setName] = useState("");
+    const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [repassword, setRepassword] = useState("");
-
     const [passwordMatch, setPasswordMatch] = useState(true);
+
+    const {signup, isPending, error} = useSignup();
 
     const submitHandler = e => {
         e.preventDefault();
-        if (password !== repassword) {
-            setPasswordMatch(false);
-        } else if (password === passwordMatch) {
-            setPasswordMatch(true);
-        }
+        signup(email, password, name);
     }
 
     return (
@@ -29,7 +28,7 @@ const Signup = () => {
 
                     <div>
                         <label>Name:</label>
-                        <input type="text" value={Name} onChange={e => setName(e.target.value)} />
+                        <input type="text" value={name} onChange={e => setName(e.target.value)} />
                     </div>
 
                     <div>
