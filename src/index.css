@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,300&family=Rubik+Glitch&display=swap');
+
 :root {
     color-scheme: dark;
 }
 
 * {
+    background-origin: border-box;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -19,35 +22,23 @@
 html {
     font-size: calc(45% + .8vmin);
     overflow-x: hidden;
+    overflow-y: scroll;
     scroll-behavior: smooth;
-    user-select: none;
+    height: 100%;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Flex', sans-serif;
     color: #fff;
+    background-image: url("./assets/img/706663.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-color: #000000aa;
+    background-blend-mode: color;
 }
 
 :any-link {
     text-decoration: none;
-    all: unset;
     cursor: pointer;
     color: #00b7ff;
-}
-
-body::-webkit-scrollbar {
-    width: 1rem;
-}
-
-body::-webkit-scrollbar-thumb {
-    background-color: #424242;
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
-}
-
-body::-webkit-scrollbar-thumb:hover {
-    background-color: #565656;
 }
