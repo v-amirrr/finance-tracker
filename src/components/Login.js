@@ -8,7 +8,7 @@ import styles from "./Login.module.css";
 
 const loginPageVariants = {
     hidden: { opacity: 0, y: 10 },
-    visible: { opacity: 1, y: [10, -10, 0], transition: { delay: 0.2, duration: 0.4, type: "tween" } },
+    visible: { opacity: 1, y: [10, -10, 0], transition: { delay: 0.5, duration: 0.4, type: "tween" } },
     exit: {opacity: 0, y: -10, transition: { duration: 0.4, type: "tween" }}
 }
 
@@ -24,7 +24,7 @@ const Login = () => {
 
     return (
         <>
-            <div>
+            <div className={styles.page}>
                 <motion.form className={styles["login-form"]} onSubmit={submitHandler} initial="hidden" animate="visible" exit="exit" variants={loginPageVariants}>
                     <h1>Login</h1>
 

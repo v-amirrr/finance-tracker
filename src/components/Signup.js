@@ -9,7 +9,7 @@ import { motion } from 'framer-motion';
 
 const signupPageVariants = {
     hidden: { opacity: 0, y: 10 },
-    visible: { opacity: 1, y: [10, -10, 0], transition: { delay: 0.2, duration: 0.4, type: "tween" } },
+    visible: { opacity: 1, y: [10, -10, 0], transition: { delay: 0.5, duration: 0.4, type: "tween" } },
     exit: {opacity: 0, y: -10, transition: { duration: 0.4, type: "tween" }}
 }
 
@@ -30,7 +30,7 @@ const Signup = () => {
 
     return (
         <>
-            <div>
+            <div className={styles.page}>
                 <motion.form className={styles["signup-form"]} initial="hidden" animate="visible" exit="exit" variants={signupPageVariants}>
                     <h1>Sign Up</h1>
 
