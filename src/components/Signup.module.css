@@ -55,7 +55,7 @@
     font-weight: 600;
 }
 
-.form-section input:hover, .form-section input:focus {
+.form-section input:hover {
     background-color: #dbdbdb;
 }
 
