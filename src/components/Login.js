@@ -2,7 +2,15 @@ import React, { useState } from 'react';
 
 import { Link } from 'react-router-dom';
 
+import { motion } from 'framer-motion';
+
 import styles from "./Login.module.css";
+
+const loginPageVariants = {
+    hidden: { opacity: 0, y: 10 },
+    visible: { opacity: 1, y: [10, -10, 0], transition: { delay: 0.2, duration: 0.4, type: "tween" } },
+    exit: {opacity: 0, y: -10, transition: { duration: 0.4, type: "tween" }}
+}
 
 const Login = () => {
     
@@ -17,7 +25,7 @@ const Login = () => {
     return (
         <>
             <div>
-                <form className={styles["login-form"]} onSubmit={submitHandler}>
+                <motion.form className={styles["login-form"]} onSubmit={submitHandler} initial="hidden" animate="visible" exit="exit" variants={loginPageVariants}>
                     <h1>Login</h1>
 
                     <div className={styles["form-section"]}>
@@ -34,8 +42,8 @@ const Login = () => {
                         <p>Don't have an account? <Link to="/signup">Create One</Link></p>
                     </div>
 
-                    <div className={styles["form-btn"]}>Login</div>
-                </form>
+                    <div className={styles["form-btn"]} onClick={submitHandler}>Login</div>
+                </motion.form>
             </div>   
         </>
     );

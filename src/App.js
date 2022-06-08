@@ -1,18 +1,26 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
+
+import { AnimatePresence } from 'framer-motion';
 
 import Homepage from './components/Homepage';
 import EnterPages from './components/EnterPages';
+import Signup from './components/Signup';
+import Login from './components/Login';
 
 const App = () => {
+    const location = useLocation();
     return (
         <>
             <div>
-                <Routes>
-                    <Route path='/' element={<Homepage />} />
-                    <Route path='signup' element={<EnterPages />} />
-                    <Route path='login' element={<EnterPages />} />
-                </Routes>
+                <AnimatePresence>
+                    <Routes location={location} key={location.key}>
+                        <Route path='/' element={<Homepage />} />
+                        <Route path='signup' element={<EnterPages />} />
+                        <Route path='login' element={<EnterPages />} />
+                        <Route path='/*' element={<Navigate to="/" />} />
+                    </Routes>
+                </AnimatePresence>
             </div>
         </>
     );

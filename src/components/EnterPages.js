@@ -2,6 +2,8 @@ import React from 'react';
 
 import { useLocation } from 'react-router-dom';
 
+import { AnimatePresence } from 'framer-motion';
+
 import styles from "./EnterPages.module.css";
 
 import Login from './Login';
@@ -13,11 +15,13 @@ const EnterPages = () => {
 
     return (
         <>
-            <div className={styles["homepage"]}>
-                {
-                    location.pathname === "/signup" ? <Signup /> : <Login />
-                }
-            </div>
+            <AnimatePresence>
+                <div className={styles["homepage"]}>
+                    {
+                        location.pathname === "/signup" ? <Signup /> : <Login />
+                    }
+                </div>
+            </AnimatePresence>
         </>
     );
 };

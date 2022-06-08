@@ -5,6 +5,14 @@ import { useSignup } from "../hooks/useSignup";
 
 import styles from "./Signup.module.css";
 
+import { motion } from 'framer-motion';
+
+const signupPageVariants = {
+    hidden: { opacity: 0, y: 10 },
+    visible: { opacity: 1, y: [10, -10, 0], transition: { delay: 0.2, duration: 0.4, type: "tween" } },
+    exit: {opacity: 0, y: -10, transition: { duration: 0.4, type: "tween" }}
+}
+
 const Signup = () => {
 
     const [name, setName] = useState("");
@@ -23,7 +31,7 @@ const Signup = () => {
     return (
         <>
             <div>
-                <form className={styles["signup-form"]}>
+                <motion.form className={styles["signup-form"]} initial="hidden" animate="visible" exit="exit" variants={signupPageVariants}>
                     <h1>Sign Up</h1>
 
                     <div className={styles["form-section"]}>
@@ -50,8 +58,8 @@ const Signup = () => {
                         <p>Already have an account? <Link to="/login">Login</Link></p>
                     </div>
 
-                    <div className={styles["form-btn"]}>Sign Up</div>
-                </form>
+                    <div className={styles["form-btn"]} onClick={submitHandler}>Sign Up</div>
+                </motion.form>
             </div> 
         </>
     );
