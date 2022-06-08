@@ -27,7 +27,7 @@ const Homepage = () => {
                         <br />
                         (And Trust Me, You Do Not)
                     </p>
-                    <motion.div className={styles["homepage-start-btn"]} whileTap={{ scale: 0.9 }}>
+                    <motion.div className={styles["homepage-start-btn"]} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
                         <Link to="/login">START</Link>
                     </motion.div>
                 </motion.div>

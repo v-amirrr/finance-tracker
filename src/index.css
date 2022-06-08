@@ -20,7 +20,7 @@
 }
 
 html {
-    font-size: calc(45% + .8vmin);
+    font-size: calc(90% + .8vmin);
     overflow-x: hidden;
     overflow-y: scroll;
     scroll-behavior: smooth;
@@ -41,4 +41,10 @@ body {
     text-decoration: none;
     cursor: pointer;
     color: #00b7ff;
+}
+
+@media (max-width: 780px) {
+    html {
+        font-size: calc(80% + .8vmin);
+    }
 }
