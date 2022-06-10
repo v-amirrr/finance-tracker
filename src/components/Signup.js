@@ -51,7 +51,7 @@ const Signup = () => {
                     </div>
 
                     <div className={styles["login-section"]}>
-                        <p>Already have an account? <Link to="/login">Login</Link></p>
+                        <p>Already have an account? <Link to="/login"><p className='link'>Login</p></Link></p>
                     </div>
 
                     <div className={styles["form-btn"]} onClick={submitHandler}>Sign Up</div>

@@ -34,11 +34,10 @@ const Login = () => {
 
                     <div className={styles["form-section"]}>
                         <input placeholder='Password' type="password" value={password} onChange={e => setPassword(e.target.value)} />
-                        
                     </div>
 
                     <div className={styles["signup-section"]}>
-                        <p>Don't have an account? <Link to="/signup">Create One</Link></p>
+                        <p>Don't have an account? <Link to="/signup"><p className='link'>Create One</p></Link></p>
                     </div>
 
                     <div className={styles["form-btn"]} onClick={submitHandler}>Login</div>

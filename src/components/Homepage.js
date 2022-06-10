@@ -37,7 +37,7 @@ const Homepage = () => {
                 </motion.div>
 
                 <motion.div className={styles["footer"]} whileHover={{ scale: 1.5, y: -10 }}  initial="hidden" animate="visible" variants={homepageFooterVariants}  exit="exit">
-                    <p>Made With ❤ By <a href='https://github.com/v-amirrr' target="_blank" rel='noopener noreferrer'>ME</a>.</p>
+                    <p>Made With ❤ By <a className='link' href='https://github.com/v-amirrr' target="_blank" rel='noopener noreferrer'>ME</a>.</p>
                 </motion.div>
             </div>
         </>
