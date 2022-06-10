@@ -29,9 +29,11 @@ const Homepage = () => {
                         <br />
                         (And Trust Me, You Don't)
                     </p>
-                    <motion.div className={styles["homepage-start-btn"]} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                        <Link to="/login">START</Link>
-                    </motion.div>
+                    <Link to="/login">
+                        <motion.div className={styles["homepage-start-btn"]} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                            <Link to="/login">START</Link>
+                        </motion.div>
+                    </Link>
                 </motion.div>
 
                 <motion.div className={styles["footer"]} whileHover={{ scale: 1.5, y: -10 }}  initial="hidden" animate="visible" variants={homepageFooterVariants}  exit="exit">

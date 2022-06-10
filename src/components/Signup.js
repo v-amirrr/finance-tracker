@@ -9,8 +9,8 @@ import { motion } from 'framer-motion';
 
 const signupPageVariants = {
     hidden: { opacity: 0, y: 10 },
-    visible: { opacity: 1, y: [10, -10, 0], transition: { delay: 0.5, duration: 0.4, type: "tween" } },
-    exit: {opacity: 0, y: -10, transition: { duration: 0.4, type: "tween" }}
+    visible: { opacity: 1, y: [-10, 10, 0], transition: { delay: 0.4, duration: 0.4, type: "tween" } },
+    exit: {opacity: 0, y: 10, transition: { duration: 0.4, type: "tween" }}
 }
 
 const Signup = () => {
@@ -35,22 +35,18 @@ const Signup = () => {
                     <h1>Sign Up</h1>
 
                     <div className={styles["form-section"]}>
-                        {/* <label>Name:</label> */}
                         <input placeholder='Name' type="text" value={name} onChange={e => setName(e.target.value)} />
                     </div>
 
                     <div className={styles["form-section"]}>
-                        {/* <label>Email:</label> */}
                         <input placeholder='Email' type="text" value={email} onChange={e => setEmail(e.target.value)} />
                     </div>
 
                     <div className={styles["form-section"]}>
-                        {/* <label>Password:</label> */}
                         <input placeholder='Password' type="password" value={password} onChange={e => setPassword(e.target.value)} />
                     </div>
 
                     <div className={styles["form-section"]}>
-                        {/* <label>Password Confirmation:</label> */}
                         <input placeholder='Confirm' type="password" value={repassword} onChange={e => setRepassword(e.target.value)} />
                     </div>
 
