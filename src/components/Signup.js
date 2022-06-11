@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { useSignup } from "../hooks/useSignup";
 
 import styles from "./Signup.module.css";
 
 import { motion } from 'framer-motion';
+
+import { IoMdArrowRoundBack } from "react-icons/io";
 
 const signupPageVariants = {
     hidden: { opacity: 0, y: 10 },
@@ -28,11 +30,16 @@ const Signup = () => {
         signup(email, password, name);
     }
 
+    const navigate = useNavigate();
+
     return (
         <>
             <div className={styles.page}>
                 <motion.form className={styles["signup-form"]} initial="hidden" animate="visible" exit="exit" variants={signupPageVariants}>
-                    <h1>Sign Up</h1>
+                <div className={styles["title-section"]}>
+                        <i onClick={() => navigate(-1)}><IoMdArrowRoundBack /></i>
+                        <h1>Sign Up</h1>
+                    </div>
 
                     <div className={styles["form-section"]}>
                         <input placeholder='Name' type="text" value={name} onChange={e => setName(e.target.value)} />

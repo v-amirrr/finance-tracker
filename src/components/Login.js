@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { motion } from 'framer-motion';
 
 import styles from "./Login.module.css";
+
+import { IoMdArrowRoundBack } from "react-icons/io";
+
 
 const loginPageVariants = {
     hidden: { opacity: 0, y: 10 },
@@ -22,11 +25,16 @@ const Login = () => {
         console.log(email, password);
     }
 
+    const navigate = useNavigate();
+
     return (
         <>
             <div className={styles.page}>
                 <motion.form className={styles["login-form"]} onSubmit={submitHandler} initial="hidden" animate="visible" exit="exit" variants={loginPageVariants}>
-                    <h1>Login</h1>
+                    <div className={styles["title-section"]}>
+                        <i onClick={() => navigate(-1)}><IoMdArrowRoundBack /></i>
+                        <h1>Login</h1>
+                    </div>
 
                     <div className={styles["form-section"]}>
                         <input placeholder='Email' type="email" value={email} onChange={e => setEmail(e.target.value)} />
