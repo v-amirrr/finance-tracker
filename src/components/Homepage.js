@@ -1,10 +1,9 @@
 import React from 'react';
+import styles from "./Homepage.module.css";
 
 import { Link } from 'react-router-dom';
 
 import { motion } from "framer-motion"
-
-import styles from "./Homepage.module.css";
 
 const homepageTextVariants = {
     hidden: { opacity: 0, y: 10 },
@@ -25,9 +24,7 @@ const Homepage = () => {
                 <motion.div className={styles["homepage-text"]} initial="hidden" animate="visible" exit="exit" variants={homepageTextVariants}>
                     <h1>Fianace Tracker</h1>
                     <p>
-                        (Just In Case, If You Ever Need A Goddamn Finance Tracker)
-                        <br />
-                        (And Trust Me, You Don't)
+                        (Just In Case, If You Ever Need A Finance Tracker)
                     </p>
                     <Link to="/login">
                         <motion.div className={styles["homepage-start-btn"]} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>

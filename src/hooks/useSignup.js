@@ -1,7 +1,11 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+
 import { projectAuth } from "../firebase/config";
 
+import { LoadingShow } from "../context/LoadingShowContextProvider";
+
 export const useSignup = () => {
+    const LoadingShowContext = useContext(LoadingShow);
     const [error, setError] = useState(null);
     const [isPending, setIsPending] = useState(false);
 
@@ -23,9 +27,17 @@ export const useSignup = () => {
         catch (err) {
             console.log(err.message);
             setError(err.message);
-            setIsPending(false)
+            setIsPending(false);
         }
     }
 
-    return { error, isPending, signup };
+    if (isPending) {
+        LoadingShowContext.setShow(true);
+    } else if (!isPending) {
+        setTimeout(() => {
+            LoadingShowContext.setShow(false);
+        }, 1000);
+    }
+
+    return { error, signup };
 }

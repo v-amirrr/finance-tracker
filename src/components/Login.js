@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
+import styles from "./Login.module.css";
 
 import { Link, useNavigate } from 'react-router-dom';
 
-import { motion } from 'framer-motion';
-
-import styles from "./Login.module.css";
-
 import { IoMdArrowRoundBack } from "react-icons/io";
 
+import { motion } from 'framer-motion';
 
 const loginPageVariants = {
     hidden: { opacity: 0, y: 10 },
@@ -32,7 +30,7 @@ const Login = () => {
             <div className={styles.page}>
                 <motion.form className={styles["login-form"]} onSubmit={submitHandler} initial="hidden" animate="visible" exit="exit" variants={loginPageVariants}>
                     <div className={styles["title-section"]}>
-                        <i onClick={() => navigate(-1)}><IoMdArrowRoundBack /></i>
+                        <motion.i onClick={() => navigate(-1)} whileTap={{ scale: 0.6 }}><IoMdArrowRoundBack /></motion.i>
                         <h1>Login</h1>
                     </div>
 
@@ -48,7 +46,7 @@ const Login = () => {
                         <p>Don't have an account? <Link to="/signup"><p className='link'>Create One</p></Link></p>
                     </div>
 
-                    <div className={styles["form-btn"]} onClick={submitHandler}>Login</div>
+                    <motion.div className={styles["form-btn"]} onClick={submitHandler} whileTap={{ scale: 0.9 }}>Login</motion.div>
                 </motion.form>
             </div>   
         </>
