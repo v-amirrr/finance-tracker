@@ -9,9 +9,12 @@ const initialState = {
 const authReducer = (state, action) => {
     switch (action.type) {
         case "LOGIN":
+            localStorage.setItem('user', true);
+            localStorage.setItem('res', JSON.stringify(action.payload));
             return { ...state, user: action.payload }
 
         case "LOGOUT":
+            localStorage.clear();
             return { ...state, user: null }
 
         default:
@@ -22,7 +25,6 @@ const authReducer = (state, action) => {
 const AuthContextProvider = ({children}) => {
 
     const [state, dispatch] = useReducer(authReducer, initialState);
-    console.log(state)
 
     return (
         <>

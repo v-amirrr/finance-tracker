@@ -6,7 +6,7 @@ import useAuthContext from "./useAuthContext";
 
 import { projectAuth } from "../firebase/config";
 
-export const useLogout = async () => {
+export const useLogout = () => {
 
     const navigate = useNavigate();
 

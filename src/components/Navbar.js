@@ -4,8 +4,7 @@ import styles from "./Navbar.module.css";
 import { useLogout } from "../hooks/useLogout";
 
 const Navbar = () => {
-
-    const { logout, error } = useLogout();
+    const { logout } = useLogout();
 
     return (
         <>
