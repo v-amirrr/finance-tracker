@@ -6,7 +6,7 @@ import useAuthContext from "./useAuthContext";
 
 import { projectAuth } from "../firebase/config";
 
-export const useSignup = () => {
+export const useLogin = () => {
  
     const navigate = useNavigate();
 
@@ -15,21 +15,19 @@ export const useSignup = () => {
 
     const { dispatch } = useAuthContext();
 
-    const signup = async (email, password, name) => {
+    const login = async (email, password) => {
         setError(null);
         navigate("/loader");
 
         try {
             if(!isCancelled) {
-                const response = await projectAuth.createUserWithEmailAndPassword(email, password);
+                const response = await projectAuth.signInWithEmailAndPassword(email, password);
     
                 if (!response) {
-                    throw new Error("Couldn't Sign Up");
+                    throw new Error("Couldn't Login");
                 }
     
-                await response.user.updateProfile({ displayName: name });
-    
-                dispatch({ type: "SIGN_UP", payload: response.user});
+                dispatch({ type: "LOGIN", payload: response.user});
     
                 setError(null);
                 setTimeout(() => {
@@ -50,5 +48,5 @@ export const useSignup = () => {
         return () => setIsCancelled(true);
     }, []);
 
-    return { signup, error };
+    return { login, error };
 }
