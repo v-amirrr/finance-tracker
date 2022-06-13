@@ -10,13 +10,14 @@ export const useSignup = () => {
  
     const navigate = useNavigate();
 
+    const [isCancelled, setIsCancelled] = useState(false);
     const [error, setError] = useState(null);
 
     const { dispatch } = useAuthContext();
 
     const signup = async (email, password, name) => {
         setError(null);
-        navigate("/loader")
+        navigate("/loader");
 
         try {
             const response = await projectAuth.createUserWithEmailAndPassword(email, password);
@@ -42,6 +43,10 @@ export const useSignup = () => {
             }, 1000);
         }
     }
+
+    useEffect(() => {
+        return () => setIsCancelled(true);
+    }, []);
 
     return { signup, error };
 }

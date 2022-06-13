@@ -1,19 +1,23 @@
 import { useState, useEffect } from "react";
 
+import { useNavigate } from "react-router-dom";
+
 import { useAuthContext } from "./useAuthContext";
 
 import { projectAuth } from "../firebase/config";
 
 export const useLogout = async () => {
+
+    const navigate = useNavigate();
+
     const [isCancelled, setIsCancelled] = useState(false);
     const [error, setError] = useState(null);
-    const [isPending, setIsPending] = useState(false);
 
     const { dispatch } = useAuthContext();
 
     const logout = async () => {
         setError(null);
-        setIsPending(true);
+        navigate("/loader");
 
         try {
             if(!isCancelled) {
@@ -22,15 +26,18 @@ export const useLogout = async () => {
                 dispatch({ type: "LOGOUT"});
     
                 setError(null);
-                setIsPending(false);
+                setTimeout(() => {
+                    navigate(-1);
+                }, 1000);
             }
         }
 
         catch (err) {
             if(!isCancelled) {
-                console.log(err);
                 setError(err.massege);
-                setIsPending(false);
+                setTimeout(() => {
+                    navigate(-1);
+                }, 1000);
             }
         }
     }
