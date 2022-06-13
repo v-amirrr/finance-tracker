@@ -7,6 +7,8 @@ import { IoMdArrowRoundBack } from "react-icons/io";
 
 import { useSignup } from "../hooks/useSignup";
 
+import Loader from './Loader';
+
 import { motion } from 'framer-motion';
 
 const signupPageVariants = {
@@ -36,7 +38,7 @@ const Signup = () => {
         <>
             <div className={styles.page}>
                 <motion.form className={styles["signup-form"]} initial="hidden" animate="visible" exit="exit" variants={signupPageVariants}>
-                <div className={styles["title-section"]}>
+                    <div className={styles["title-section"]}>
                         <motion.i onClick={() => navigate(-1)} whileTap={{ scale: 0.6 }}><IoMdArrowRoundBack /></motion.i>
                         <h1>Sign Up</h1>
                     </div>
@@ -61,7 +63,9 @@ const Signup = () => {
                         <p>Already have an account? <Link to="/login"><p className='link'>Login</p></Link></p>
                     </div>
 
-                    <motion.div className={styles["form-btn"]} onClick={submitHandler} whileTap={{ scale: 0.9 }}>Sign Up</motion.div>
+                    {error ? <div className={styles["error-section"]}>{error}</div> : ""}
+
+                    <motion.div className={styles["form-btn"]} onClick={submitHandler} whileTap={{ scale: 0.9 }}>Create</motion.div>
                 </motion.form>
             </div> 
         </>

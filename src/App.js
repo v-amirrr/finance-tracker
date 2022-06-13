@@ -1,13 +1,13 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 
 import Homepage from './components/Homepage';
 import Signup from './components/Signup';
 import Login from './components/Login';
-import Loading from './components/Loading';
+import Loader from './components/Loader';
 
-import LoadingShowContextProvider from './context/LoadingShowContextProvider';
+import AuthContextProvider from './context/AuthContext';
 
 import { AnimatePresence } from 'framer-motion';
 
@@ -18,17 +18,17 @@ const App = () => {
     return (
         <>
             <div>
-                <LoadingShowContextProvider>
-                    <AnimatePresence>
-                        <Routes location={location} key={location.key}>
-                            <Route path='/' element={<Homepage />} />
-                            <Route path='signup' element={<Signup />} />
-                            <Route path='login' element={<Login />} />
-                            <Route path='/*' element={<Navigate to="/" />} />
-                        </Routes>
-                        <Loading />
-                    </AnimatePresence>
-                </LoadingShowContextProvider>
+                <AuthContextProvider>
+                        <AnimatePresence>
+                            <Routes location={location} key={location.key}>
+                                <Route path='/' element={<Homepage />} />
+                                <Route path='signup' element={<Signup />} />
+                                <Route path='login' element={<Login />} />
+                                <Route path='/loader' element={<Loader />} />
+                                <Route path='/*' element={<Navigate to="/" />} />
+                            </Routes>
+                        </AnimatePresence>
+                </AuthContextProvider>
             </div>
         </>
     );
