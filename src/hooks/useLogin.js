@@ -31,7 +31,7 @@ export const useLogin = () => {
     
                 setError(null);
                 setTimeout(() => {
-                    navigate(-1);
+                    navigate("/");
                 }, 1000);
             }
         }
@@ -39,7 +39,7 @@ export const useLogin = () => {
         catch (err) {
             setError(err.message);
             setTimeout(() => {
-                navigate(-1);
+                navigate("/");
             }, 1000);
         }
     }

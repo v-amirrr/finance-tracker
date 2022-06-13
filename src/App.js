@@ -2,10 +2,10 @@ import React from 'react';
 
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 
-import Homepage from './components/Homepage';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import Loader from './components/Loader';
+import HomePages from './components/HomePages';
 
 import AuthContextProvider from './context/AuthContext';
 
@@ -21,7 +21,7 @@ const App = () => {
                 <AuthContextProvider>
                         <AnimatePresence>
                             <Routes location={location} key={location.key}>
-                                <Route path='/' element={<Homepage />} />
+                                <Route path='/' element={<HomePages />} />
                                 <Route path='signup' element={<Signup />} />
                                 <Route path='login' element={<Login />} />
                                 <Route path='/loader' element={<Loader />} />

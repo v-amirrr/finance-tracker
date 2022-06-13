@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 import { useNavigate } from "react-router-dom";
 
-import { useAuthContext } from "./useAuthContext";
+import useAuthContext from "./useAuthContext";
 
 import { projectAuth } from "../firebase/config";
 
@@ -27,7 +27,7 @@ export const useLogout = async () => {
     
                 setError(null);
                 setTimeout(() => {
-                    navigate(-1);
+                    navigate("/");
                 }, 1000);
             }
         }
@@ -36,7 +36,7 @@ export const useLogout = async () => {
             if(!isCancelled) {
                 setError(err.massege);
                 setTimeout(() => {
-                    navigate(-1);
+                    navigate("/");
                 }, 1000);
             }
         }
@@ -46,5 +46,5 @@ export const useLogout = async () => {
         return () => setIsCancelled(true);
     }, []);
 
-    return { logout, error, isPending };
+    return { logout, error };
 }

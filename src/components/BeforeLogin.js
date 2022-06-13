@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from "./Homepage.module.css";
+import styles from "./BeforeLogin.module.css";
 
 import { Link } from 'react-router-dom';
 
@@ -17,7 +17,7 @@ const homepageFooterVariants = {
     exit: {opacity: 0, y: -10, transition: { duration: 0.4, type: "tween" }}
 }
 
-const Homepage = () => {
+const BeforeLogin = () => {
     return (
         <>
             <div className={styles["home-page"]}>
@@ -41,4 +41,4 @@ const Homepage = () => {
     );
 };
 
-export default Homepage;
+export default BeforeLogin;
