@@ -5,6 +5,8 @@ import { Link, useNavigate } from 'react-router-dom';
 
 import { IoMdArrowRoundBack } from "react-icons/io";
 
+import { useLogin } from "../hooks/useLogin";
+
 import { motion } from 'framer-motion';
 
 const loginPageVariants = {
@@ -18,9 +20,11 @@ const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
+    const { login, error } = useLogin();
+
     const submitHandler = e => {
         e.preventDefault();
-        console.log(email, password);
+        login(email, password);
     }
 
     const navigate = useNavigate();

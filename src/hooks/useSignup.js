@@ -29,7 +29,7 @@ export const useSignup = () => {
     
                 await response.user.updateProfile({ displayName: name });
     
-                dispatch({ type: "SIGN_UP", payload: response.user});
+                dispatch({ type: "LOGIN", payload: response.user});
     
                 setError(null);
                 setTimeout(() => {

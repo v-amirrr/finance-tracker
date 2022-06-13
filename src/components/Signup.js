@@ -7,8 +7,6 @@ import { IoMdArrowRoundBack } from "react-icons/io";
 
 import { useSignup } from "../hooks/useSignup";
 
-import Loader from './Loader';
-
 import { motion } from 'framer-motion';
 
 const signupPageVariants = {
