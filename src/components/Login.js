@@ -7,6 +7,8 @@ import { IoMdArrowRoundBack } from "react-icons/io";
 
 import { useLogin } from "../hooks/useLogin";
 
+import LogoutRedirect from './LogoutRedirect';
+
 import { motion } from 'framer-motion';
 
 const loginPageVariants = {
@@ -15,8 +17,12 @@ const loginPageVariants = {
     exit: {opacity: 0, y: 10, transition: { duration: 0.4, type: "tween" }}
 }
 
+const userLocal = JSON.parse(localStorage.getItem('res'));
+
 const Login = () => {
     
+    const navigate = useNavigate();
+
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
@@ -27,11 +33,14 @@ const Login = () => {
         login(email, password);
     }
 
-    const navigate = useNavigate();
-
     return (
         <>
             <div className={styles.page}>
+            {
+                userLocal
+                ?
+                <LogoutRedirect />
+                :
                 <motion.form className={styles["login-form"]} onSubmit={submitHandler} initial="hidden" animate="visible" exit="exit" variants={loginPageVariants}>
                     <div className={styles["title-section"]}>
                         <motion.i onClick={() => navigate(-1)} whileTap={{ scale: 0.6 }}><IoMdArrowRoundBack /></motion.i>
@@ -52,6 +61,7 @@ const Login = () => {
 
                     <motion.div className={styles["form-btn"]} onClick={submitHandler} whileTap={{ scale: 0.9 }}>Login</motion.div>
                 </motion.form>
+            }
             </div>   
         </>
     );
