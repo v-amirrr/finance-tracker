@@ -24,11 +24,12 @@ export const useLogout = () => {
                 await projectAuth.signOut();
     
                 dispatch({ type: "LOGOUT"});
+                localStorage.clear();
     
                 setError(null);
                 setTimeout(() => {
                     navigate("/");
-                }, 1000);
+                }, 500);
             }
         }
 
@@ -37,7 +38,7 @@ export const useLogout = () => {
                 setError(err.massege);
                 setTimeout(() => {
                     navigate("/");
-                }, 1000);
+                }, 500);
             }
         }
     }

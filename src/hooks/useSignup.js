@@ -34,7 +34,7 @@ export const useSignup = () => {
                 setError(null);
                 setTimeout(() => {
                     navigate("/");
-                }, 1000);
+                }, 500);
             }
         }
         
@@ -42,7 +42,7 @@ export const useSignup = () => {
             setError(err.message);
             setTimeout(() => {
                 navigate("/");
-            }, 1000);
+            }, 500);
         }
     }
 
