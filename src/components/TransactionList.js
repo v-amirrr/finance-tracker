@@ -1,19 +1,39 @@
 import React from 'react';
 import styles from "./TransactionList.module.css";
 
+import { motion, AnimatePresence } from 'framer-motion';
+
+const listItemsVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { delay: 0.8, duration: 0.4, type: "tween", when: "beforeChildren" } },
+    exit: {opacity: 0, y: -50, transition: { duration: 0.4, type: "tween" }}
+}
+
 const TransactionList = ({ transactions }) => {
     return (
         <>
-            <div className={styles["list"]}>
+        <AnimatePresence tran={transactions}>
+            <div className={styles["list"]}>{console.log(transactions)}
                 {
+                    transactions
+                    &&
                     transactions.map(item => (
-                        <div className={styles["item"]} key={item.id}>
+                        <motion.div className={styles["item"]} key={item.id} initial="hidden" animate="visible" exit="exit" variants={listItemsVariants}>
                             <p>{item.name}</p>
                             <p>${item.amount}</p>
-                        </div>
+                        </motion.div>
                     ))
                 }
+
+                {
+                    transactions==false
+                    &&
+                    <motion.div className={styles["item"]} initial="hidden" animate="visible" exit="exit" variants={listItemsVariants}>
+                        <p>There Is No Transaction!</p>
+                    </motion.div>
+                }
             </div>
+        </AnimatePresence>
         </>
     );
 };
