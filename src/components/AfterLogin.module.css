@@ -1,0 +1,22 @@
+.after-login {
+}
+
+.after-login-main {
+    margin: 3rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+@media (max-width: 880px) {
+    .after-login-main {
+        flex-direction: column;
+        flex-flow: column-reverse;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .list, .form {
+        margin: 1rem 0;
+    }
+}

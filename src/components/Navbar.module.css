@@ -4,15 +4,12 @@
     justify-content: space-between;
     align-items: center;
     padding: .5rem;
-    border: none;
     border-radius: 0 0 20px 20px;
     -webkit-border-radius: 0 0 20px 20px;
     -moz-border-radius: 0 0 20px 20px;
     -ms-border-radius: 0 0 20px 20px;
     -o-border-radius: 0 0 20px 20px;
     background: #000000;
-    backdrop-filter: blur(9.8px);
-    -webkit-backdrop-filter: blur(9.8px);
     border: 1px solid #ffffff1f;
     box-shadow: 0 4px 30px #000000;
 

@@ -16,11 +16,11 @@ const AfterLogin = () => {
 
     return (
         <>
-            <div>
+            <div className={styles["after-login"]}>
                 <Navbar />
-                <div>
+                <div className={styles["after-login-main"]}>
                     <div className={styles["list"]}>
-                        {documents && <TransactionList transaction={documents} />}
+                        {documents && <TransactionList transactions={documents} />}
                         {error && <p>{error}</p>}
                     </div>
 
