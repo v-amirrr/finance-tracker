@@ -4,7 +4,12 @@ import styles from "./AfterLogin.module.css";
 import Navbar from './Navbar';
 import TransactionForm from './TransactionForm';
 
+import useAuthContext from '../hooks/useAuthContext';
+
 const AfterLogin = () => {
+
+    const { user } = useAuthContext();
+
     return (
         <>
             <div>
@@ -15,7 +20,7 @@ const AfterLogin = () => {
                     </div>
 
                     <div className={styles["form"]}>
-                        <TransactionForm />
+                        <TransactionForm uid={user.uid} />
                     </div>
                 </div>
             </div>
