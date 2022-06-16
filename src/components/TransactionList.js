@@ -12,7 +12,7 @@ const listItemsVariants = {
 const TransactionList = ({ transactions }) => {
     return (
         <>
-        <AnimatePresence tran={transactions}>
+        <AnimatePresence>
             <div className={styles["list"]}>{console.log(transactions)}
                 {
                     transactions

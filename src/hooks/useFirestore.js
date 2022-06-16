@@ -42,18 +42,14 @@ export const useFirestore = (collection) => {
 
     // add a document
     const addDocument = async (doc) => {
-        navigate("/loader");
-
         try {
             const createdAt = timestamp.fromDate(new Date());
             const addedDocument = await ref.add({ ...doc, createdAt });
             dispatchIfNotCancelled({ type: "ADDED_DOCUMENT", payload: addDocument });
-            navigate("/");
 
         }
         catch (err) {
             dispatchIfNotCancelled({type: "ERROR", payload: err});
-            navigate("/");
             console.log(err)
         }
     }

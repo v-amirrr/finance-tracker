@@ -1,5 +1,5 @@
 .list {
-    background-color: #000;
+    background: #000000eb;
     width: fit-content;
     height: 20rem;
     padding: 1rem;
@@ -7,11 +7,8 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: #00000000;
-    backdrop-filter: blur(9.8px);
-    -webkit-backdrop-filter: blur(9.8px);
     border: none;
-    box-shadow: 0 4px 30px #000000;
+    box-shadow: 0 4px 30px #00000054;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -39,7 +36,7 @@
     justify-content: center;
     align-items: center;
     margin: .5rem 0;
-    background-color: #000;
+    background-color: #1d1d1d;
     padding: 1rem;
     width: 100%;
     border: none;
@@ -53,4 +50,16 @@
 .item p {
     white-space: nowrap;
     margin: 0 .3rem;
+}
+
+@media (max-width: 880px) {
+    .list {
+        width: 20rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .list {
+        width: 15rem;
+    }
 }

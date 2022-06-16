@@ -41,7 +41,7 @@ const Signup = () => {
         <>
             <div className={styles.page}>
                 {
-                    userLocal
+                    userLocal==false
                     ?
                     <LogoutRedirect />
                     :

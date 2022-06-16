@@ -1,22 +1,18 @@
 .form {
-    background-color: #000;
     width: fit-content;
     padding: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: #00000000;
-    backdrop-filter: blur(9.8px);
-    -webkit-backdrop-filter: blur(9.8px);
+    background: #000000b7;
     border: none;
-    box-shadow: 0 4px 30px #000000;
+    box-shadow: 0 4px 30px #00000054;
     border-radius: 20px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
-    max-width: 15rem;
 }
 
 .form-title {
@@ -81,7 +77,14 @@
     -o-transition: background-color .3s, letter-spacing .3s;
 }
 
-.from-btn:hover {
-    background-color: #000000;
-    letter-spacing: .5px;
+@media (max-width: 880px) {
+    .form {
+        width: 20rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .form {
+        width: 15rem;
+    }
 }

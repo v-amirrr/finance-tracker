@@ -31,7 +31,7 @@ body {
     font-family: 'Roboto Flex', sans-serif;
     color: #fff;
     background-image: url("./assets/img/706663.jpg");
-    background-size: 100% 100%;
+    /* background-size: contain; */
     background-repeat: no-repeat;
     background-color: #000000aa;
     background-blend-mode: color;
@@ -51,7 +51,7 @@ body {
 
 ::placeholder {
     color: #000;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .link {
