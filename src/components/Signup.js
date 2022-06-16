@@ -9,6 +9,8 @@ import { useSignup } from "../hooks/useSignup";
 
 import LogoutRedirect from './LogoutRedirect';
 
+import Popup from './Popup';
+
 import { motion } from 'framer-motion';
 
 const signupPageVariants = {
@@ -71,11 +73,11 @@ const Signup = () => {
                             <p>Already have an account? <Link to="/login"><p className='link'>Login</p></Link></p>
                         </div>
 
-                        {error ? <div className={styles["error-section"]}>{error}</div> : ""}
-
                         <motion.div className={styles["form-btn"]} onClick={submitHandler} whileTap={{ scale: 0.9 }}>Create</motion.div>
                     </motion.form>
                 }
+
+                {error && <Popup text={error} /> }
             </div> 
         </>
     );

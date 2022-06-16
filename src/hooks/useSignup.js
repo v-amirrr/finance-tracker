@@ -41,7 +41,7 @@ export const useSignup = () => {
         catch (err) {
             setError(err.message);
             setTimeout(() => {
-                navigate("/");
+                navigate(-1);
             }, 500);
         }
     }

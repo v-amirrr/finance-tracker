@@ -9,6 +9,8 @@ import { useLogin } from "../hooks/useLogin";
 
 import LogoutRedirect from './LogoutRedirect';
 
+import Popup from './Popup';
+
 import { motion } from 'framer-motion';
 
 const loginPageVariants = {
@@ -62,6 +64,7 @@ const Login = () => {
                     <motion.div className={styles["form-btn"]} onClick={submitHandler} whileTap={{ scale: 0.9 }}>Login</motion.div>
                 </motion.form>
             }
+            {error && <Popup text={error} />}
             </div>   
         </>
     );

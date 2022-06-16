@@ -18,7 +18,7 @@
     width: 20rem;
 }
 
-.list::-webkit-scrollbar {
+/* .list::-webkit-scrollbar {
     width: .5rem;
 }
 
@@ -29,7 +29,7 @@
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
-}
+} */
 
 .item {
     display: flex;

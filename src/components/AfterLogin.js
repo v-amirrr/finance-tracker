@@ -9,7 +9,7 @@ import useAuthContext from '../hooks/useAuthContext';
 
 import { useCollection } from "../hooks/useCollection";
 
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const afterloginVariants = {
     hidden: { opacity: 0, y: -10 },
@@ -24,18 +24,20 @@ const AfterLogin = () => {
 
     return (
         <>
-            <motion.div className={styles["after-login"]} initial="hidden" animate="visible" exit="exit" variants={afterloginVariants}>
-                <Navbar />
-                <div className={styles["after-login-main"]}>
-                    <div className={styles["list"]}>
-                        <TransactionList transactions={documents} />
-                    </div>
+            <AnimatePresence>
+                <motion.div className={styles["after-login"]} initial="hidden" animate="visible" exit="exit" variants={afterloginVariants}>
+                    <Navbar />
+                    <div className={styles["after-login-main"]}>
+                        <div className={styles["list"]}>
+                            <TransactionList transactions={documents} />
+                        </div>
 
-                    <div className={styles["form"]}>
-                        <TransactionForm uid={user.uid} />
+                        <div className={styles["form"]}>
+                            <TransactionForm uid={user.uid} />
+                        </div>
                     </div>
-                </div>
-            </motion.div>
+                </motion.div>
+            </AnimatePresence>
         </>
     );
 };

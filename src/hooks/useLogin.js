@@ -30,16 +30,14 @@ export const useLogin = () => {
                 dispatch({ type: "LOGIN", payload: response.user});
     
                 setError(null);
-                setTimeout(() => {
-                    navigate("/");
-                }, 500);
+                navigate("/");
             }
         }
         
         catch (err) {
             setError(err.message);
             setTimeout(() => {
-                navigate("/");
+                navigate(-1);
             }, 500);
         }
     }
