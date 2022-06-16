@@ -24,20 +24,18 @@ const AfterLogin = () => {
 
     return (
         <>
-            <AnimatePresence>
-                <motion.div className={styles["after-login"]} initial="hidden" animate="visible" exit="exit" variants={afterloginVariants}>
-                    <Navbar />
-                    <div className={styles["after-login-main"]}>
-                        <div className={styles["list"]}>
-                            <TransactionList transactions={documents} />
-                        </div>
-
-                        <div className={styles["form"]}>
-                            <TransactionForm uid={user.uid} />
-                        </div>
+            <motion.div className={styles["after-login"]} initial="hidden" animate="visible" exit="exit" variants={afterloginVariants}>
+                <Navbar />
+                <div className={styles["after-login-main"]}>
+                    <div className={styles["list"]}>
+                        <TransactionList transactions={documents} error={error} />
                     </div>
-                </motion.div>
-            </AnimatePresence>
+
+                    <div className={styles["form"]}>
+                        <TransactionForm uid={user.uid} />
+                    </div>
+                </div>
+            </motion.div>
         </>
     );
 };

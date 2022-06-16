@@ -11,12 +11,6 @@ const homepageTextVariants = {
     exit: {opacity: 0, y: -10, transition: { duration: 0.4, type: "tween" }}
 }
 
-const homepageFooterVariants = {
-    hidden: { opacity: 0, y: 10 },
-    visible: { opacity: 1, y: 0, transition: { delay: 1 } },
-    exit: {opacity: 0, y: -10, transition: { duration: 0.4, type: "tween" }}
-}
-
 const BeforeLogin = () => {
     return (
         <>
@@ -31,10 +25,6 @@ const BeforeLogin = () => {
                             <Link to="/login">START</Link>
                         </motion.div>
                     </Link>
-                </motion.div>
-
-                <motion.div className={styles["footer"]} whileHover={{ scale: 1.5, y: -10 }}  initial="hidden" animate="visible" variants={homepageFooterVariants}  exit="exit">
-                    <p>Made With ❤ By <a className='link' href='https://github.com/v-amirrr' target="_blank" rel='noopener noreferrer'>ME</a>.</p>
                 </motion.div>
             </div>
         </>

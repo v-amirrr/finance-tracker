@@ -3,6 +3,8 @@ import styles from "./Navbar.module.css";
 
 import { useLogout } from "../hooks/useLogout";
 
+import Popup from "./Popup";
+
 import { motion } from 'framer-motion';
 
 const navbarVariants = {
@@ -25,7 +27,7 @@ const navbarBtnVariants = {
 
 const Navbar = () => {
 
-    const { logout } = useLogout();
+    const { logout, error } = useLogout();
 
     return (
         <>
@@ -38,6 +40,7 @@ const Navbar = () => {
                     <motion.button onClick={logout} whileTap={{ scale: 0.9 }}>Logout</motion.button>
                 </motion.div>
             </motion.div>
+            {error && <Popup text={error} />}
         </>
     );
 };

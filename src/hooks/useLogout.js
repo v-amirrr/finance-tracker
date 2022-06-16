@@ -24,20 +24,22 @@ export const useLogout = () => {
                 await projectAuth.signOut();
     
                 dispatch({ type: "LOGOUT"});
-                localStorage.clear();
-    
+                
                 setError(null);
                 setTimeout(() => {
                     navigate("/");
                 }, 500);
+                
+                localStorage.clear();
             }
         }
 
         catch (err) {
+            console.log(err)
             if(!isCancelled) {
                 setError(err.massege);
                 setTimeout(() => {
-                    navigate("/");
+                    navigate(-1);
                 }, 500);
             }
         }

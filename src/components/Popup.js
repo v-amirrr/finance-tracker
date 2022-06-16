@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from "./Popup.module.css";
 
-import { motion, AnimatePresence } from 'framer-motion';
-
-import { GrFormClose } from "react-icons/gr";
+import { motion } from 'framer-motion';
 
 const popupVariants = {
     hidden: { opacity: 0, y: -50 },
@@ -13,13 +11,10 @@ const popupVariants = {
 
 const Popup = ({ text }) => {
 
-    const [close, setClose] = useState(false);
-
     return (
         <>
-            <motion.div className={close ? styles["popup-close"] : styles["popup"]} initial="hidden" animate="visible" exit="exit" variants={popupVariants}>
+            <motion.div className={styles["popup"]} initial="hidden" animate="visible" exit="exit" variants={popupVariants}>
                 <p>{text}</p>
-                <i onClick={() => setClose(true)}><GrFormClose color='#fff' /></i>
             </motion.div>
         </>
     );

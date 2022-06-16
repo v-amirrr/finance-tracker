@@ -9,7 +9,7 @@ const listItemsVariants = {
     exit: {opacity: 0, y: -50, transition: { duration: 0.4, type: "tween" }}
 }
 
-const TransactionList = ({ transactions }) => {
+const TransactionList = ({ transactions, error }) => {
     return (
         <>
         <AnimatePresence>
@@ -28,8 +28,18 @@ const TransactionList = ({ transactions }) => {
                 {
                     transactions==false
                     &&
+                    error==false
+                    &&
                     <motion.div className={styles["item"]} initial="hidden" animate="visible" exit="exit" variants={listItemsVariants}>
                         <p>There Is No Transaction!</p>
+                    </motion.div>
+                }
+
+                {
+                    error
+                    &&
+                    <motion.div className={styles["item"]} initial="hidden" animate="visible" exit="exit" variants={listItemsVariants}>
+                        <p>{error}</p>
                     </motion.div>
                 }
             </div>
