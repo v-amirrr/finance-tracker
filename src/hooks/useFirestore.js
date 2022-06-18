@@ -15,6 +15,8 @@ const firestoreReducer = (state, action) => {
     switch (action.type) {
         case "ADDED_DOCUMENT":
             return { document: action.payload, success: true, error: null };
+        case "DELETED_DOCUMENT":
+            return { document: action.payload, success: true, error: null }; 
         case "ERROR":
             return { document: action.payload, success: false, error: action.payload };
         default:
@@ -54,10 +56,22 @@ export const useFirestore = (collection) => {
         }
     }
 
+    // delete a document
+    const deleteDocument = async (id) => {
+        try {
+            const deletedDocument = await ref.doc(id).delete();
+            dispatchIfNotCancelled({ type: "DELETED_DOCUMENT", payload: deletedDocument });
+        }
+        catch (err) {
+            console.log(err)
+            dispatchIfNotCancelled({ type: "ERROR", payload: "Couldn't Delete" });
+        }
+    }
+
     // clean up function
     useEffect(() => {
         return () => setIsCancelled(true);
     }, []);
 
-    return { addDocument, state };
+    return { addDocument, state, deleteDocument };
 };

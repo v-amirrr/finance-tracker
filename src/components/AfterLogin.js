@@ -9,7 +9,7 @@ import useAuthContext from '../hooks/useAuthContext';
 
 import { useCollection } from "../hooks/useCollection";
 
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const afterloginVariants = {
     hidden: { opacity: 0, y: -10 },
@@ -20,7 +20,11 @@ const afterloginVariants = {
 const AfterLogin = () => {
 
     const { user } = useAuthContext();
-    const { documents, error } = useCollection('transactions');
+    const { documents, error } = useCollection(
+        'transactions', 
+        ["uid", "==", user.uid], 
+        ["createdAt", "desc"]
+    );
 
     return (
         <>

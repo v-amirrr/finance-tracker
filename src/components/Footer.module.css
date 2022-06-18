@@ -1,6 +1,5 @@
-.footer {
-    position: absolute;
-    bottom: 0;
+.footer-afterlogin, .footer-beforelogin {
+    margin: auto;
     width: 7rem;
     height: 1.8rem;
     display: flex;
@@ -17,12 +16,11 @@
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(4.8px);
     -webkit-backdrop-filter: blur(4.8px);
-    transform: translateX(-50%);
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
-    left: 50%;
+}
+
+.footer-beforelogin {
+    position: relative;
+    bottom: 2rem;
 }
 
 .red-heart {

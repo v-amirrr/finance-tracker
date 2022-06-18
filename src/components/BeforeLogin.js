@@ -3,6 +3,8 @@ import styles from "./BeforeLogin.module.css";
 
 import { Link } from 'react-router-dom';
 
+import Footer from './Footer';
+
 import { motion } from "framer-motion"
 
 const homepageTextVariants = {

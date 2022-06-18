@@ -1,6 +1,10 @@
 import React from 'react';
 import styles from "./TransactionList.module.css";
 
+import {useFirestore} from "../hooks/useFirestore";
+
+import { FaTrash } from "react-icons/fa";
+
 import { motion, AnimatePresence } from 'framer-motion';
 
 const listItemsVariants = {
@@ -10,10 +14,14 @@ const listItemsVariants = {
 }
 
 const TransactionList = ({ transactions, error }) => {
+
+    const { deleteDocument, response } = useFirestore('transactions');
+    console.log(response)
+
     return (
         <>
         <AnimatePresence>
-            <div className={styles["list"]}>{console.log(transactions)}
+            <div className={styles["list"]}>
                 {
                     transactions
                     &&
@@ -21,6 +29,7 @@ const TransactionList = ({ transactions, error }) => {
                         <motion.div className={styles["item"]} key={item.id} initial="hidden" animate="visible" exit="exit" variants={listItemsVariants}>
                             <p>{item.name}</p>
                             <p>${item.amount}</p>
+                            <div onClick={() => deleteDocument(item.id)}><FaTrash /></div>
                         </motion.div>
                     ))
                 }
