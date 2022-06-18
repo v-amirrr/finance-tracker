@@ -1,7 +1,7 @@
 .list {
     background: #000000eb;
     width: fit-content;
-    height: 20rem;
+    min-height: 20rem;
     padding: 1rem;
     display: flex;
     justify-content: center;
@@ -14,22 +14,8 @@
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
-    overflow-y: scroll;
     width: 20rem;
 }
-
-/* .list::-webkit-scrollbar {
-    width: .5rem;
-}
-
-.list::-webkit-scrollbar-thumb {
-    background-color: #444444;
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
-} */
 
 .item {
     display: flex;

@@ -13,7 +13,7 @@ const Footer = () => {
     return (
         <>
             <motion.div className={styles["footer"]} initial="hidden" animate="visible" variants={homepageFooterVariants} exit="exit">
-                <p>Made With ❤ By <a className='link' href='https://github.com/v-amirrr' target="_blank" rel='noopener noreferrer'>ME</a>.</p>
+                <p>Made With <span className={styles["red-heart"]}>❤</span> By <a className='link' href='https://github.com/v-amirrr' target="_blank" rel='noopener noreferrer'>ME</a>.</p>
             </motion.div>
         </>
     );

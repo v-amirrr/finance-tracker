@@ -30,10 +30,10 @@ html {
 body {
     font-family: 'Roboto Flex', sans-serif;
     color: #fff;
-    background-image: url("./assets/img/706663.jpg");
-    /* background-size: contain; */
+    background-image: url("./assets/img/ezgif.com-gif-maker2.jpg");
+    background-size: cover;
     background-repeat: no-repeat;
-    background-color: #000000aa;
+    background-color: #000000b3;
     background-blend-mode: color;
 }
 
