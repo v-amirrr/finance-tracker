@@ -13,19 +13,19 @@ const formTitleVariants = {
 
 const formInput1Variants = {
     hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { delay: 2.2, duration: 0.4, type: "tween" } },
+    visible: { opacity: 1, y: 0, transition: { delay: 1.2, duration: 0.4, type: "tween" } },
     exit: {opacity: 0, y: 50, transition: { duration: 0.4, type: "tween" }}
 }
 
 const formInput2Variants = {
     hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { delay: 2.4, duration: 0.4, type: "tween" } },
+    visible: { opacity: 1, y: 0, transition: { delay: 1.4, duration: 0.4, type: "tween" } },
     exit: {opacity: 0, y: 50, transition: { duration: 0.4, type: "tween" }}
 }
 
 const formBtnVariants = {
     hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { delay: 2.6, duration: 0.4, type: "tween" } },
+    visible: { opacity: 1, y: 0, transition: { delay: 1.6, duration: 0.4, type: "tween" } },
     exit: {opacity: 0, y: 50, transition: { duration: 0.4, type: "tween" }}
 }
 
@@ -57,7 +57,7 @@ const TransactionForm = ({ uid }) => {
                     <motion.input initial="hidden" animate="visible" exit="exit" variants={formInput2Variants} placeholder='Amount $' type="number" value={amount} onChange={e => setAmount(e.target.value)} />
                 </div>
 
-                <motion.button initial="hidden" animate="visible" exit="exit" variants={formBtnVariants} className={styles["from-btn"]} onClick={transactionAdder} whileTap={{ scale: 0.8 }}>
+                <motion.button initial="hidden" animate="visible" exit="exit" variants={formBtnVariants} className={styles["form-btn"]} onClick={transactionAdder} whileTap={{ scale: 0.8 }}>
                     Add
                 </motion.button>
             </form>

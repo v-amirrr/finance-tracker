@@ -17,6 +17,7 @@
 
 .form-title {
     font-size: 1.2rem;
+    font-weight: 500;
     white-space: nowrap;
 }
 
@@ -32,31 +33,27 @@
     margin: .5rem 0;
     padding: .5rem;
     border: none;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
-    background-color: #a4a4a4;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    background-color: #222222;
     transition: background-color .3s;
     -webkit-transition: background-color .3s;
     -moz-transition: background-color .3s;
     -ms-transition: background-color .3s;
     -o-transition: background-color .3s;
-    color: #000;
+    color: #e0e0e0;
     font-size: .8rem;
-    font-weight: 600;
-}
-
-.form-inputs input:hover {
-    background-color: #dbdbdb;
+    font-weight: 500;
 }
 
 .form-inputs input:focus {
-    background-color: #ffffff;
+    background-color: #282828;
 }
 
-.from-btn {
+.form-btn {
     font-size: 1.1rem;
     font-weight: 900;
     padding: .5rem;
@@ -75,6 +72,10 @@
     -moz-transition: background-color .3s, letter-spacing .3s;
     -ms-transition: background-color .3s, letter-spacing .3s;
     -o-transition: background-color .3s, letter-spacing .3s;
+}
+
+.form-btn:hover {
+    background-color: #4d4d4d;
 }
 
 @media (max-width: 880px) {
