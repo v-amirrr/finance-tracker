@@ -1,26 +1,23 @@
-.footer-afterlogin, .footer-beforelogin {
-    margin: auto;
-    width: 7rem;
-    height: 1.8rem;
+.footer {
+    position: absolute;
+    bottom: 0;
+    padding: .45rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: .6rem;
-    border: #ffffff10 solid .1px;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
     background: #000000b5;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(4.8px);
-    -webkit-backdrop-filter: blur(4.8px);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    box-shadow: #000000 0px 4px 12px;
 }
 
-.footer-beforelogin {
-    position: relative;
-    bottom: 2rem;
+.footer p {
+    font-size: .7rem;
 }
 
 .red-heart {

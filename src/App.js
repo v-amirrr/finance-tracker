@@ -6,7 +6,6 @@ import Signup from './components/Signup';
 import Login from './components/Login';
 import Loader from './components/Loader';
 import HomePages from './components/HomePages';
-import Footer from "./components/Footer";
 
 import AuthContextProvider from './context/AuthContext';
 
@@ -28,7 +27,6 @@ const App = () => {
                                 <Route path='/loader' element={<Loader />} />
                                 <Route path='/*' element={<Navigate to="/" />} />
                             </Routes>
-                            <Footer />
                         </AnimatePresence>
                 </AuthContextProvider>
             </div>

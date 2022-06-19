@@ -28,6 +28,8 @@ const BeforeLogin = () => {
                         </motion.div>
                     </Link>
                 </motion.div>
+
+                <Footer />
             </div>
         </>
     );

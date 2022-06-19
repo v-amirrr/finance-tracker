@@ -7,26 +7,26 @@ import { motion } from 'framer-motion';
 
 const formTitleVariants = {
     hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { delay: 2, duration: 0.4, type: "tween" } },
-    exit: {opacity: 0, y: -50, transition: { duration: 0.4, type: "tween" }}
+    visible: { opacity: 1, y: 0, transition: { delay: 1, duration: 0.4, type: "tween" } },
+    exit: {opacity: 0, y: 50, transition: { duration: 0.4, type: "tween" }}
 }
 
 const formInput1Variants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { delay: 2.2, duration: 0.4, type: "tween" } },
-    exit: {opacity: 0, y: -50, transition: { duration: 0.4, type: "tween" }}
+    exit: {opacity: 0, y: 50, transition: { duration: 0.4, type: "tween" }}
 }
 
 const formInput2Variants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { delay: 2.4, duration: 0.4, type: "tween" } },
-    exit: {opacity: 0, y: -50, transition: { duration: 0.4, type: "tween" }}
+    exit: {opacity: 0, y: 50, transition: { duration: 0.4, type: "tween" }}
 }
 
 const formBtnVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { delay: 2.6, duration: 0.4, type: "tween" } },
-    exit: {opacity: 0, y: -50, transition: { duration: 0.4, type: "tween" }}
+    exit: {opacity: 0, y: 50, transition: { duration: 0.4, type: "tween" }}
 }
 
 const TransactionForm = ({ uid }) => {

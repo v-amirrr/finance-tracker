@@ -9,6 +9,8 @@ import { useSignup } from "../hooks/useSignup";
 
 import LogoutRedirect from './LogoutRedirect';
 
+import Footer from './Footer';
+
 import Popup from './Popup';
 
 import { motion } from 'framer-motion';
@@ -78,6 +80,8 @@ const Signup = () => {
                 }
 
                 {error && <Popup text={error} /> }
+
+                <Footer />
             </div> 
         </>
     );

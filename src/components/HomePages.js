@@ -10,7 +10,6 @@ const userLocal = JSON.parse(localStorage.getItem('res'));
 const HomePages = () => {
     
     const { user, dispatch } = useAuthContext();
-    console.log(user)
 
     useEffect(() => {
         if (userLocal) {
