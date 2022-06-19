@@ -20,7 +20,7 @@ const App = () => {
         <>
             <div>
                 <AuthContextProvider>
-                        <AnimatePresence>
+                        <AnimatePresence exitBeforeEnter>
                             <Routes location={location} key={location.key}>
                                 <Route path='/' element={<HomePages />} />
                                 <Route path='signup' element={<Signup />} />

@@ -29,7 +29,7 @@ export const useLogout = () => {
                 setError(null);
                 setTimeout(() => {
                     navigate("/", { replace: true });
-                }, 500);
+                }, 2000);
                 
             }
         }
