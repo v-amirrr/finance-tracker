@@ -1,9 +1,7 @@
 import React from 'react';
 import styles from "./Navbar.module.css";
 
-import { useLogout } from "../hooks/useLogout";
-
-import Popup from "./Popup";
+import { useNavigate } from 'react-router-dom';
 
 import { motion } from 'framer-motion';
 
@@ -27,7 +25,7 @@ const navbarBtnVariants = {
 
 const Navbar = () => {
 
-    const { logout, error } = useLogout();
+    const navigate = useNavigate();
 
     return (
         <>
@@ -37,10 +35,9 @@ const Navbar = () => {
                 </motion.div>
 
                 <motion.div variants={navbarBtnVariants}>
-                    <motion.button onClick={logout} whileTap={{ scale: 0.9 }}>Logout</motion.button>
+                    <motion.button onClick={() => navigate("/logout-confirmation")} whileTap={{ scale: 0.9 }}>Logout</motion.button>
                 </motion.div>
             </motion.div>
-            {error && <Popup text={error} />}
         </>
     );
 };

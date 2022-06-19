@@ -24,13 +24,13 @@ export const useLogout = () => {
                 await projectAuth.signOut();
     
                 dispatch({ type: "LOGOUT"});
+                localStorage.clear();
                 
                 setError(null);
                 setTimeout(() => {
-                    navigate("/");
+                    navigate("/", { replace: true });
                 }, 500);
                 
-                localStorage.clear();
             }
         }
 
@@ -39,7 +39,7 @@ export const useLogout = () => {
             if(!isCancelled) {
                 setError(err.massege);
                 setTimeout(() => {
-                    navigate(-1);
+                    navigate("/");
                 }, 500);
             }
         }

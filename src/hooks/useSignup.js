@@ -33,7 +33,7 @@ export const useSignup = () => {
     
                 setError(null);
                 setTimeout(() => {
-                    navigate("/");
+                    navigate("/", { replace: true });
                 }, 500);
             }
         }

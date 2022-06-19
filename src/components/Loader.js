@@ -12,14 +12,14 @@ const loaderVariants = {
 const Loader = () => {
     return (
         <>
-                <motion.div className={styles["loader"]} initial="hidden" animate="visible" exit="exit" variants={loaderVariants}>
-                    <div className={styles["lds-ellipsis"]}>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                </motion.div>
+            <motion.div className={styles["loader"]} initial="hidden" animate="visible" exit="exit" variants={loaderVariants}>
+                <div className={styles["lds-ellipsis"]}>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </motion.div>
         </>
     );
 };

@@ -24,7 +24,7 @@ const BeforeLogin = () => {
                     </p>
                     <Link to="/login">
                         <motion.div className={styles["homepage-start-btn"]} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                            <Link to="/login">START</Link>
+                            START
                         </motion.div>
                     </Link>
                 </motion.div>

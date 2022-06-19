@@ -30,7 +30,7 @@ export const useLogin = () => {
                 dispatch({ type: "LOGIN", payload: response.user});
     
                 setError(null);
-                navigate("/");
+                navigate("/", { replace: true });
             }
         }
         

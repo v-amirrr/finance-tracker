@@ -16,7 +16,7 @@ import { motion } from 'framer-motion';
 const afterloginVariants = {
     hidden: { opacity: 0, y: -10 },
     visible: { opacity: 1, y: [-10, 10, 0], transition: { delay: 0.8, duration: 0.4, type: "tween", when: "beforeChildren" } },
-    exit: {opacity: 0, y: -10, transition: { duration: 0.4, delay: 0.4, type: "tween", when: "afterChildren" }}
+    exit: {opacity: 0, y: -10, transition: { duration: 0.4, delay: 0.4, type: "tween" }}
 }
 
 const AfterLogin = () => {

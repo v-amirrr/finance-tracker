@@ -6,6 +6,7 @@ import Signup from './components/Signup';
 import Login from './components/Login';
 import Loader from './components/Loader';
 import HomePages from './components/HomePages';
+import LogoutConfirmation from './components/LogoutConfirmation';
 
 import AuthContextProvider from './context/AuthContext';
 
@@ -25,6 +26,7 @@ const App = () => {
                                 <Route path='signup' element={<Signup />} />
                                 <Route path='login' element={<Login />} />
                                 <Route path='/loader' element={<Loader />} />
+                                <Route path="/logout-confirmation" element={<LogoutConfirmation />} />
                                 <Route path='/*' element={<Navigate to="/" />} />
                             </Routes>
                         </AnimatePresence>

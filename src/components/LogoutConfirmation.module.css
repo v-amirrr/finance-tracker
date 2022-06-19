@@ -1,0 +1,55 @@
+.logout-confirmation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #000000eb;
+    width: 100vw;
+    height: 100vh;
+}
+
+.logout-confirmation p {
+    text-align: center;
+}
+
+.buttons {
+    margin: 5rem;
+}
+
+.buttons div {
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    font-size: 1.2rem;
+    padding: .5rem;
+    white-space: nowrap;
+    border: none;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    letter-spacing: -.5px;
+    cursor: pointer;
+    transition: background-color .3s;
+    -webkit-transition: background-color .3s;
+    -moz-transition: background-color .3s;
+    -ms-transition: background-color .3s;
+    -o-transition: background-color .3s;
+}
+
+.buttons div:nth-child(1) {
+    background-color: #008000;
+}
+
+.buttons div:nth-child(2) {
+    background-color: #ff0000;
+}
+
+@media (max-width: 340px) {
+    .buttons div {
+        font-size: .8rem;
+    }
+}
