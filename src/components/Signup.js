@@ -9,15 +9,15 @@ import { useSignup } from "../hooks/useSignup";
 
 import LogoutRedirect from './LogoutRedirect';
 
-import Footer from './Footer';
-
 import Popup from './Popup';
+
+import Footer from './Footer';
 
 import { motion } from 'framer-motion';
 
 const signupPageVariants = {
     hidden: { opacity: 0, y: 10 },
-    visible: { opacity: 1, y: [-10, 10, 0], transition: { delay: 0.4, duration: 0.4, type: "tween" } },
+    visible: { opacity: 1, y: [-10, 10, 0], transition: {  duration: 0.4, type: "tween" } },
     exit: {opacity: 0, y: 10, transition: { duration: 0.4, type: "tween" }}
 }
 
@@ -51,7 +51,7 @@ const Signup = () => {
                     :
                     <motion.form className={styles["signup-form"]} initial="hidden" animate="visible" exit="exit" variants={signupPageVariants}>
                         <div className={styles["title-section"]}>
-                            <motion.i onClick={() => navigate(-1)} whileTap={{ scale: 0.6 }}><IoMdArrowRoundBack /></motion.i>
+                            <motion.i onClick={() => navigate("/login")} whileTap={{ scale: 0.6 }}><IoMdArrowRoundBack /></motion.i>
                             <h1>Sign Up</h1>
                         </div>
 

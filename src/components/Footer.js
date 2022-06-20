@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 const homepageFooterVariants = {
     hidden: { opacity: 0, y: -10, scale: 0.9, transition: { duration: 0.4, type: "tween" } },
-    visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.4, delay: 1.2, type: "tween" } },
+    visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.4, delay: 0.4, type: "tween" } },
     exit: { opacity: 0, y: -10, scale: 0.9, transition: { duration: 0.4, type: "tween" } }
 }
 

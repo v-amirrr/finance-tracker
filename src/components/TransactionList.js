@@ -7,10 +7,16 @@ import { FaTrash } from "react-icons/fa";
 
 import { motion, AnimatePresence } from 'framer-motion';
 
+const transactionListVariants = {
+    hidden: { opacity: 0, x: -50, scale: 0.9 },
+    visible: { opacity: 1, x: 0, scale: 1, transition: { delay: 0.8, duration: 0.4, type: "tween", when: "beforeChildren" } },
+    exit: { opacity: 0, x: -50, scale: 0.9, transition: { duration: 0.4, type: "tween", when: "afterChlidren" } }
+}
+
 const listItemsVariants = {
     hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { delay: 0.4, duration: 0.4, type: "tween", when: "beforeChildren" } },
-    exit: {opacity: 0, y: 50, transition: { duration: 0.4, type: "tween" }}
+    visible: { opacity: 1, y: 0, transition: { delay: 0.4, duration: 0.4, type: "tween" } },
+    exit: { opacity: 0, y: 50, transition: { duration: 0.4, type: "tween" } }
 }
 
 const TransactionList = ({ transactions, error }) => {
@@ -19,8 +25,7 @@ const TransactionList = ({ transactions, error }) => {
 
     return (
         <>
-        <AnimatePresence>
-            <div className={styles["list"]}>
+            <motion.div className={styles["list"]} initial="hidden" animate="visible" exit="exit" variants={transactionListVariants}>
                 <AnimatePresence>
                     {
                         transactions
@@ -33,9 +38,7 @@ const TransactionList = ({ transactions, error }) => {
                             </motion.div>
                         ))
                     }
-                </AnimatePresence>
-
-                <AnimatePresence>
+                    
                     {
                         transactions==false
                         &&
@@ -45,9 +48,7 @@ const TransactionList = ({ transactions, error }) => {
                             <p>There Is No Transaction!</p>
                         </motion.div>
                     }
-                </AnimatePresence>
-
-                <AnimatePresence>
+                    
                     {
                         error
                         &&
@@ -56,8 +57,7 @@ const TransactionList = ({ transactions, error }) => {
                         </motion.div>
                     }
                 </AnimatePresence>
-            </div>
-        </AnimatePresence>
+            </motion.div>
         </>
     );
 };

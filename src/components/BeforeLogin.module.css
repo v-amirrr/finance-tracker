@@ -1,4 +1,4 @@
-.home-page {
+.before-login {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -6,7 +6,7 @@
     height: 100vh;
 }
 
-.homepage-text {
+.before-login-text {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,7 +14,7 @@
     text-align: center;
 }
 
-.homepage-text h1 {
+.before-login-text h1 {
     font-size: 4.5rem;
     font-weight: 100;
     font-family: 'Rubik Glitch', cursive;
@@ -25,8 +25,8 @@
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: homepage-text-gradient 5s infinite alternate;
-    -webkit-animation: homepage-text-gradient 2s infinite alternate;
+    animation: before-login-text-gradient 5s infinite alternate;
+    -webkit-animation: before-login-text-gradient 2s infinite alternate;
     transition: all .3s;
     -webkit-transition: all .3s;
     -moz-transition: all .3s;
@@ -34,7 +34,7 @@
     -o-transition: all .3s;
 }
 
-@keyframes homepage-text-gradient {
+@keyframes before-login-text-gradient {
     0% {
         background-position: 0% 0%;
     }
@@ -44,13 +44,13 @@
     }
 }
 
-.homepage-text p {
+.before-login-text p {
     white-space: nowrap;
     font-size: .6rem;
     color: #d8d8d8;
 }
 
-.homepage-start-btn {
+.btn {
     width: 5.5rem;
     height: 2.5rem;
     border: none;
@@ -76,26 +76,26 @@
     white-space: nowrap;
 }
 
-.homepage-start-btn:hover {
+.btn:hover {
     letter-spacing: .5px;
 }
 
 @media (max-width: 580px) {
-    .homepage-text h1 {
+    .before-login-text h1 {
         font-size: 2.5rem;
     }
 
-    .homepage-text p {
+    .before-login-text p {
         font-size: .5rem;
     }
 }
 
 @media (max-width: 380px) {
-    .homepage-text h1 {
+    .before-login-text h1 {
         font-size: 2rem;
     }
 
-    .homepage-text p {
+    .before-login-text p {
         font-size: .5rem;
     }
 }
