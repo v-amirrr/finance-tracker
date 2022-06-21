@@ -30,8 +30,8 @@ export const useLogin = () => {
                 dispatch({ type: "LOGIN", payload: response.user });
         
                 setError(null);
-                setIsPending(false);
                 navigate("/");
+                setIsPending(false);
             }
         }
     
@@ -41,7 +41,7 @@ export const useLogin = () => {
             setIsPending(false);
             setTimeout(() => {
                 setError(null);
-            }, 4000);
+            }, 6000);
         }
     }
 

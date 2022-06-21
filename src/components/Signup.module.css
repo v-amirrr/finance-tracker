@@ -109,11 +109,14 @@
 }
 
 .form-btn {
+    overflow: hidden;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
-    padding: .5rem;
+    width: 4rem;
+    height: 2.5rem;
     font-size: 1.1rem;
     font-weight: 900;
     white-space: nowrap;

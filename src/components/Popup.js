@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 const popupVariants = {
     hidden: { opacity: 0, y: -50 },
     visible: { opacity: 1, y: 0, transition: { delay: 0.4, duration: 0.4, type: "tween" } },
-    exit: { opacity: 0, y:-50, transition: { duration: 0.4, type: "tween" } }
+    exit: { opacity: 0, y: -50, transition: { duration: 0.4, type: "tween" } }
 }
 
 const Popup = ({ text }) => {

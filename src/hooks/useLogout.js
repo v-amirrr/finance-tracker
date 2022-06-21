@@ -27,8 +27,8 @@ export const useLogout = () => {
                 localStorage.clear();
                 
                 setError(null);
-                setIsPending(false);
                 navigate("/");
+                setIsPending(false);
                 
             }
         }
@@ -39,7 +39,7 @@ export const useLogout = () => {
             setIsPending(false);
             setTimeout(() => {
                 setError(null);
-            }, 4000);
+            }, 6000);
         }
     }
 

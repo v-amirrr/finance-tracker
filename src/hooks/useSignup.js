@@ -33,8 +33,8 @@ export const useSignup = () => {
                     dispatch({ type: "LOGIN", payload: response.user});
         
                     setError(null);
-                    setIsPending(false);
                     navigate("/", { replace: true });
+                    setIsPending(false);
                 }
             }
             
@@ -59,7 +59,7 @@ export const useSignup = () => {
             setIsPending(false);
             setTimeout(() => {
                 setError(null);
-            }, 4000);
+            }, 6000);
         }
     }
 

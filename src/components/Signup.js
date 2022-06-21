@@ -11,6 +11,10 @@ import LogoutRedirect from './LogoutRedirect';
 
 import Popup from './Popup';
 
+import Loader from './Loader';
+
+import Text from "./Text";
+
 import Footer from './Footer';
 
 import { motion, AnimatePresence } from 'framer-motion';
@@ -23,11 +27,10 @@ const signupPageVariants = {
 
 const userLocal = JSON.parse(localStorage.getItem('res'));
 
-
 const Signup = () => {
 
     const navigate = useNavigate();
-    const {signup, error} = useSignup();
+    const { signup, error, isPending } = useSignup();
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -73,7 +76,15 @@ const Signup = () => {
                             <p>Already have an account? <Link to="/login"><p className='link'>Login</p></Link></p>
                         </div>
 
-                        <motion.div className={styles["form-btn"]} onClick={submitHandler} whileTap={{ scale: 0.9 }}>Create</motion.div>
+                        <motion.div className={styles["form-btn"]} onClick={submitHandler} whileTap={{ scale: 0.9 }}>
+                            <AnimatePresence key="loader">
+                                { isPending && <Loader /> }
+                            </AnimatePresence>
+                            
+                            <AnimatePresence>
+                                { !isPending && <Text text="Create" /> }
+                            </AnimatePresence>
+                        </motion.div>
                     </motion.form>
                 }
 
