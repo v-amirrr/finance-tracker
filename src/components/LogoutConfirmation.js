@@ -1,13 +1,15 @@
 import React from 'react';
 import styles from "./LogoutConfirmation.module.css";
 
+import Popup from './Popup';
+
 import { useNavigate } from 'react-router-dom';
 
 import useAuthContext from '../hooks/useAuthContext';
 
 import { useLogout } from "../hooks/useLogout";
 
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const confirmationVariants = {
     hidden: { opacity: 0 },
@@ -30,7 +32,7 @@ const confirmatioBtnVariants = {
 const LogoutConfirmation = () => {
 
     const { user } = useAuthContext();
-    const { logout } = useLogout();
+    const { logout, error } = useLogout();
 
     const navigate = useNavigate();
 
@@ -42,6 +44,11 @@ const LogoutConfirmation = () => {
                     <motion.div onClick={logout} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>Yes, Logout.</motion.div>
                     <motion.div onClick={() => navigate("/")} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>No, Take Me Back To The Home Page.</motion.div>
                 </motion.div>
+
+                <AnimatePresence>
+                    {error && <Popup text={error} />}
+                </AnimatePresence>
+
             </motion.div>
         </>
     );

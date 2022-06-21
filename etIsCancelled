@@ -1,0 +1,40 @@
+[33m6cde311[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m style: removed the animation's delay
+[33m86d3116[m fix: fixed the logout bug
+[33m852e27b[m feat: built a page where you should confirm before logging out your account
+[33maebdbf8[m style: changed some style ins the whole project
+[33md83bc13[m fix: made the footer exit animation work
+[33m9ac6126[m feat: added an icon to each transaction and with that icon you can delete that transaction
+[33m1ae50e7[m docs: added some meta tags and changed the background image
+[33m8e3d498[m feat: put the footer in the bottom of every page
+[33m5531502[m feat: added a popup for errors in login and signup pages
+[33m9fe4c94[m fix: fexed the LogoutRedirect bug
+[33m9f9ef89[m style: added the animations to the AfterLogin page
+[33m9c245fe[m style: added style to the AfterLogin page
+[33m31cf960[m style: added the animations to the navbar in AfterLogin page
+[33mc51e8e5[m style: added a style to the navbar in AfterLogin page
+[33mc345735[m feat: added the transaction list
+[33me771124[m made the transaction form work
+[33m6796294[m feat: added a form to the home page (AfterLogin)
+[33ma4214ba[m feat: added a LogoutRedirect component
+[33mea0fc12[m perf: changed the loader's dealy time
+[33mae69013[m fix: fixed a bug
+[33m07a8b77[m feat: created a AfterLogin page
+[33m6e9b265[m feat: used the login hook inside of the login component
+[33m43964e4[m feat: added a hook for login
+[33m5ac3180[m fix: imported the useEffect to prevent the error
+[33m376b6be[m refactor: added the cleanup function to signup hook and added the loader function to the logout hook
+[33m5f5680b[m feat: created a custom hook for logout
+[33m195c983[m style: changed the loader
+[33m2de1492[m feat: added a loading page
+[33ma616842[m feat: added an icon to sign up form and login form, and when the user clicks on it, it takes the user one page back
+[33m8e62ea5[m style: added a hover animation to the links
+[33m045c309[m fix: set the right size for title in the mobile view
+[33m3c3b8ba[m fix: signup page and login page couldn't execute their exit animation
+[33m9d0158c[m style: added enter and exit animation to the pages
+[33m71337d2[m style: added a style to login page
+[33mdd825e5[m style: added a style to sign up page
+[33mf8e4bf5[m style: made homepage responsive for other devices and added a hover animation to the homepage start button
+[33m10f8338[m style: added a background, animations and some text in the homepage
+[33m4f11ee6[m feat: connect the sign up page to Firebase
+[33m7fd0167[m created home page, signup page and login page
+[33m28ae9ae[m Initialize project using Create React App

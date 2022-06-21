@@ -9,36 +9,39 @@ import { projectAuth } from "../firebase/config";
 export const useLogin = () => {
  
     const navigate = useNavigate();
-
+    const { dispatch } = useAuthContext();
+    
     const [isCancelled, setIsCancelled] = useState(false);
     const [error, setError] = useState(null);
-
-    const { dispatch } = useAuthContext();
+    const [isPending, setIsPending] = useState(false);
 
     const login = async (email, password) => {
+        setIsPending(true);
         setError(null);
-        navigate("/loader");
-
+        
         try {
-            if(!isCancelled) {
+            if (!isCancelled) {
                 const response = await projectAuth.signInWithEmailAndPassword(email, password);
     
                 if (!response) {
-                    throw new Error("Couldn't Login");
+                    throw new Error("Couldn't Login.");
                 }
     
-                dispatch({ type: "LOGIN", payload: response.user});
-    
+                dispatch({ type: "LOGIN", payload: response.user });
+        
                 setError(null);
-                navigate("/", { replace: true });
+                setIsPending(false);
+                navigate("/");
             }
         }
-        
+    
         catch (err) {
+            console.log(err.message);
             setError(err.message);
+            setIsPending(false);
             setTimeout(() => {
-                navigate(-1);
-            }, 500);
+                setError(null);
+            }, 4000);
         }
     }
 
@@ -46,5 +49,5 @@ export const useLogin = () => {
         return () => setIsCancelled(true);
     }, []);
 
-    return { login, error };
+    return { login, error, isPending };
 }

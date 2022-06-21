@@ -9,15 +9,15 @@ import { projectAuth } from "../firebase/config";
 export const useLogout = () => {
 
     const navigate = useNavigate();
+    const { dispatch } = useAuthContext();
 
     const [isCancelled, setIsCancelled] = useState(false);
     const [error, setError] = useState(null);
-
-    const { dispatch } = useAuthContext();
+    const [isPending, setIsPending] = useState(false);
 
     const logout = async () => {
+        setIsPending(true);
         setError(null);
-        navigate("/loader");
 
         try {
             if(!isCancelled) {
@@ -27,21 +27,19 @@ export const useLogout = () => {
                 localStorage.clear();
                 
                 setError(null);
-                setTimeout(() => {
-                    navigate("/", { replace: true });
-                }, 2000);
+                setIsPending(false);
+                navigate("/");
                 
             }
         }
 
         catch (err) {
-            console.log(err)
-            if(!isCancelled) {
-                setError(err.massege);
-                setTimeout(() => {
-                    navigate("/");
-                }, 500);
-            }
+            console.log(err.message);
+            setError(err.message);
+            setIsPending(false);
+            setTimeout(() => {
+                setError(null);
+            }, 4000);
         }
     }
 
@@ -49,5 +47,5 @@ export const useLogout = () => {
         return () => setIsCancelled(true);
     }, []);
 
-    return { logout, error };
+    return { logout, error, isPending };
 }

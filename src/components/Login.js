@@ -13,7 +13,7 @@ import Popup from './Popup';
 
 import Footer from './Footer';
 
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const loginPageVariants = {
     hidden: { opacity: 0, y: 10 },
@@ -66,7 +66,9 @@ const Login = () => {
                     </motion.form>
                 }
                 
-                {error && <Popup text={error} />}
+                <AnimatePresence>
+                    {error && <Popup text={error} />}
+                </AnimatePresence>
 
                 <Footer />
             </div>   

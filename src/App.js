@@ -18,7 +18,7 @@ const App = () => {
 
     return (
         <>
-            <div initial="hidden" animate="visible" exit="exit">
+            <div>
                 <AuthContextProvider>
                         <AnimatePresence exitBeforeEnter>
                             <Routes location={location} key={location.key}>

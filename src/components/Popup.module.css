@@ -16,11 +16,6 @@
     align-items: center;
     color: #fff;
     z-index: 99;
-    transition: all .3s;
-    -webkit-transition: all .3s;
-    -moz-transition: all .3s;
-    -ms-transition: all .3s;
-    -o-transition: all .3s;
 }
 
 .popup i {

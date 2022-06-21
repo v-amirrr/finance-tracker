@@ -13,7 +13,7 @@ import Popup from './Popup';
 
 import Footer from './Footer';
 
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const signupPageVariants = {
     hidden: { opacity: 0, y: 10 },
@@ -27,18 +27,16 @@ const userLocal = JSON.parse(localStorage.getItem('res'));
 const Signup = () => {
 
     const navigate = useNavigate();
+    const {signup, error} = useSignup();
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [repassword, setRepassword] = useState("");
-    const [passwordMatch, setPasswordMatch] = useState(true);
-
-    const {signup, error} = useSignup();
 
     const submitHandler = e => {
         e.preventDefault();
-        signup(email, password, name);
+        signup(email, password, name, repassword);
     }
 
     return (
@@ -79,7 +77,9 @@ const Signup = () => {
                     </motion.form>
                 }
 
-                {error && <Popup text={error} /> }
+                <AnimatePresence>
+                    {error && <Popup text={error} />}
+                </AnimatePresence>
 
                 <Footer />
             </div> 
