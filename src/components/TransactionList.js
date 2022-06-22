@@ -40,16 +40,6 @@ const TransactionList = ({ transactions, error }) => {
                     }
                     
                     {
-                        transactions==false
-                        &&
-                        error==false
-                        &&
-                        <motion.div key="empty" className={styles["item"]} initial="hidden" animate="visible" exit="exit" variants={listItemsVariants}>
-                            <p>There Is No Transaction!</p>
-                        </motion.div>
-                    }
-                    
-                    {
                         error
                         &&
                         <motion.div key="error" className={styles["item"]} initial="hidden" animate="visible" exit="exit" variants={listItemsVariants}>
