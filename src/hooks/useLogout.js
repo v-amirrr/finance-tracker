@@ -27,7 +27,7 @@ export const useLogout = () => {
                 localStorage.clear();
                 
                 setError(null);
-                navigate("/");
+                navigate("/", { replace: true });
                 setIsPending(false);
                 
             }

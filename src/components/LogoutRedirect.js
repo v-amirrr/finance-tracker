@@ -1,30 +1,54 @@
 import React from 'react';
 import styles from "./LogoutRedirect.module.css";
 
+import Popup from './Popup';
+
 import { useNavigate } from 'react-router-dom';
+
+import useAuthContext from '../hooks/useAuthContext';
 
 import { useLogout } from '../hooks/useLogout';
 
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
-const logoutRedirectVariants = {
-    hidden: { opacity: 0, y: 10 },
-    visible: { opacity: 1, y: [-10, 10, 0], transition: { duration: 0.4, type: "tween", when: "beforeChildren" } },
-    exit: {opacity: 0, y: 10, transition: { duration: 0.4, type: "tween", when: "afterChildren" }}
+const confirmationVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.2, type: "tween", when: "beforeChildren" } },
+    exit: { opacity: 0, transition: { duration: 0.2, type: "tween", when: "afterChildren" } }
+}
+
+const confirmatioPVariants = {
+    hidden: { opacity: 0, y: 50, scale: 0.9 },
+    visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.4, delay: 0.2, type: "tween" } },
+    exit: { opacity: 0, y: 50, scale: 0.9, transition: { duration: 0.4, type: "tween" } }
+}
+
+const confirmatioBtnVariants = {
+    hidden: { opacity: 0, y: 50, scale: 0.9 },
+    visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.4, delay: 0.4, type: "tween" } },
+    exit: { opacity: 0, y: 50, scale: 0.9, transition: { duration: 0.4, type: "tween" } }
 }
 
 const LogoutRedirect = () => {
 
-    const { logout } = useLogout();
+    const { user } = useAuthContext();
+    const { logout, error } = useLogout();
+
     const navigate = useNavigate();
 
     return (
         <>
-            <motion.div className={styles["logout"]} initial="hidden" animate="visible" exit="exit" variants={logoutRedirectVariants}>
-                <h1>Finance Tracker</h1>
-                <p>You're already logged in. You want to create another account or login with another account?</p>
-                <p>You need to first logout from your current account.</p>
-                <motion.button onClick={logout} whileTap={{ scale: 0.9 }}>Logout From Your Current Account</motion.button>
+            <motion.div className={styles["logout-redirect"]} initial="hidden" animate="visible" exit="exit" variants={confirmationVariants}>
+                <motion.p variants={confirmatioPVariants}>{user && `${user.displayName}, `}You're already logged in with your current account. Do You want to log out from your account and login with another one?</motion.p>
+                <motion.div className={styles["buttons"]} variants={confirmatioBtnVariants}>
+                    <motion.div onClick={() => navigate("/")} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>Go Home</motion.div>
+                    <motion.div onClick={logout} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>Logout</motion.div>
+                </motion.div>
+
+                <AnimatePresence>
+                    {error && <Popup text={error} />}
+                </AnimatePresence>
+
             </motion.div>
         </>
     );

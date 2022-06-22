@@ -49,6 +49,10 @@
 }
 
 @media (max-width: 340px) {
+    .logout-confirmation p {
+        font-size: .8rem;
+    }
+
     .buttons div {
         font-size: .8rem;
     }
