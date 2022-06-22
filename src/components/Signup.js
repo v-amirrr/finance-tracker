@@ -77,7 +77,7 @@ const Signup = () => {
                             </div>
 
                             <div className={styles["login-section"]}>
-                                <p>Already have an account? <Link to="/login"><p className='link'>Login</p></Link></p>
+                                <div>Already have an account? <Link to="/login"><div className='link'>Login</div></Link></div>
                             </div>
 
                             <motion.div className={styles["form-btn"]} onClick={submitHandler} whileTap={{ scale: 0.9 }}>

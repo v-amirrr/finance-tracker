@@ -46,7 +46,7 @@ const Login = () => {
 
     return (
         <>
-            <div className={styles.page}>{console.log(!!userLocal)}
+            <div className={styles.page}>
                 {
                     userLocal
                     ?
@@ -68,7 +68,7 @@ const Login = () => {
                             </div>
 
                             <div className={styles["signup-section"]}>
-                                <p>Don't have an account? <Link to="/signup"><p className='link'>Create One</p></Link></p>
+                                <div>Don't have an account? <Link to="/signup"><div className='link'>Create One</div></Link></div>
                             </div>
 
                             <motion.div className={styles["form-btn"]} onClick={submitHandler} whileTap={{ scale: 0.9 }}>
