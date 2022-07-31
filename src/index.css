@@ -47,6 +47,10 @@ body {
     html {
         font-size: calc(80% + .8vmin);
     }
+
+    body {
+        background-size: 100% 200%;
+    }
 }
 
 ::placeholder {

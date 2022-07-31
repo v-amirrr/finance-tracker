@@ -35,8 +35,6 @@ const AfterLogin = () => {
                         <div className={styles["form"]}>
                             <TransactionForm uid={user.uid} />
                         </div>
-
-                        <Footer />
                     </div>
                 </div>
             </div>

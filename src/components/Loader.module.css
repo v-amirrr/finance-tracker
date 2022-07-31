@@ -13,7 +13,7 @@
     width: .7rem;
     height: .7rem;
     border-radius: 50%;
-    background: #fff;
+    background: rgb(128, 123, 123);
     animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
 

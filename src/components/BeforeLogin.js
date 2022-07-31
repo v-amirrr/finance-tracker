@@ -8,10 +8,10 @@ import Footer from './Footer';
 import { motion } from "framer-motion"
 
 const beforeLoginVariants = {
-    hidden: { opacity: 0, y: 10 },
-    visible: { opacity: 1, y: [10, -10, 0], transition: { duration: 0.4, type: "tween" } },
-    exit: {opacity: 0, y: -10, transition: { duration: 0.4, type: "tween" }}
-}
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.4, type: "tween" } },
+    exit: { opacity: 0, transition: { duration: 0.4, type: "tween" } }
+};
 
 const BeforeLogin = () => {
     return (

@@ -32,7 +32,7 @@ export const useCollection = (collection, _query, _orderBy) => {
             setError(null);
             
             if (result.length == 0) {
-                setError("There is no transaction!");
+                setError("There Is No Transaction!");
             }
 
         }, (error) => {
