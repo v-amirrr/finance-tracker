@@ -9,8 +9,6 @@ import useAuthContext from '../hooks/useAuthContext';
 
 import { useCollection } from "../hooks/useCollection";
 
-import Footer from './Footer';
-
 const AfterLogin = () => {
 
     const { user } = useAuthContext();
