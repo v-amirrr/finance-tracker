@@ -19,16 +19,12 @@ const BeforeLogin = () => {
             <div className={styles["before-login"]}>
                 <motion.div className={styles["before-login-text"]} initial="hidden" animate="visible" exit="exit" variants={beforeLoginVariants}>
                     <h1>Fianace Tracker</h1>
-                    <p>
-                        (Just In Case, If You Ever Need A Finance Tracker)
-                    </p>
                     <Link to="/login">
-                        <motion.div className={styles["btn"]} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                            START
+                        <motion.div className={styles["btn"]} whileTap={{ scale: 0.9 }}>
+                            let's go
                         </motion.div>
                     </Link>
                 </motion.div>
-
                 <Footer />
             </div>
         </>

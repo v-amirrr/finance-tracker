@@ -18,20 +18,18 @@ const App = () => {
 
     return (
         <>
-            <div>
-                <AuthContextProvider>
-                        <AnimatePresence exitBeforeEnter>
-                            <Routes location={location} key={location.key}>
-                                <Route path='/' element={<HomePages />} />
-                                <Route path='signup' element={<Signup />} />
-                                <Route path='login' element={<Login />} />
-                                <Route path='/loader' element={<Loader />} />
-                                <Route path="/logout-confirmation" element={<LogoutConfirmation />} />
-                                <Route path='/*' element={<Navigate to="/" />} />
-                            </Routes>
-                        </AnimatePresence>
-                </AuthContextProvider>
-            </div>
+            <AuthContextProvider>
+                    <AnimatePresence exitBeforeEnter>
+                        <Routes location={location} key={location.key}>
+                            <Route path='/' element={<HomePages />} />
+                            <Route path='signup' element={<Signup />} />
+                            <Route path='login' element={<Login />} />
+                            <Route path='/loader' element={<Loader />} />
+                            <Route path="/logout-confirmation" element={<LogoutConfirmation />} />
+                            <Route path='/*' element={<Navigate to="/" />} />
+                        </Routes>
+                    </AnimatePresence>
+            </AuthContextProvider>
         </>
     );
 };
