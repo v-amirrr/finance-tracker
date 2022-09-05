@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,300&family=Rubik+Glitch&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Rubik+Glitch&display=swap');
 
 :root {
     color-scheme: dark;
@@ -12,23 +12,17 @@
     outline: none;
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
-    /* -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none; */
 }
 
 html {
     font-size: calc(90% + .8vmin);
-    overflow-x: hidden;
-    overflow-y: scroll;
+    overflow: hidden;
     scroll-behavior: smooth;
     height: 100%;
 }
 
 body {
-    font-family: 'Roboto Flex', sans-serif;
+    font-family: 'Outfit', sans-serif;
     color: #fff;
     background-image: url("./assets/img/ezgif.com-gif-maker2.jpg");
     background-size: cover;
@@ -51,11 +45,6 @@ body {
     body {
         background-size: 100% 200%;
     }
-}
-
-::placeholder {
-    color: #cdcdcd;
-    font-weight: 500;
 }
 
 .link {
