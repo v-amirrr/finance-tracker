@@ -1,22 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import styles from "./Login.module.css";
 
 import { Link, useNavigate } from 'react-router-dom';
 
-import { IoMdArrowRoundBack } from "react-icons/io";
+import LogoutRedirect from './LogoutRedirect';
+import Popup from './Popup';
+import Loader from './Loader';
+import Text from "./Text";
+import Footer from './Footer';
 
 import { useLogin } from "../hooks/useLogin";
 
-import LogoutRedirect from './LogoutRedirect';
+import { IoMdArrowRoundBack } from "react-icons/io";
 
-import Popup from './Popup';
-
-import Loader from './Loader';
-
-import Text from "./Text";
-
-import Footer from './Footer';
-
+import styles from "./Login.module.css";
 import { motion, AnimatePresence } from 'framer-motion';
 
 const loginPageVariants = {
@@ -25,6 +21,11 @@ const loginPageVariants = {
     exit: { opacity: 0, y: 10, transition: { duration: 0.4, type: "tween" } }
 }
 
+const BtnTextVariants = {
+    hidden: { opacity: 0, x: 100, scale: 0.5 },
+    visible: { opacity: 1, x: 0, scale: 1, transition: { duration: 0.6, type: "tween" } },
+    exit: { opacity: 0, x: -100, scale: 0.5, transition: { duration: 0.6, type: "tween" } }
+}
 
 const Login = () => {
     
@@ -53,34 +54,33 @@ const Login = () => {
                     <LogoutRedirect />
                     :
                     <>
-                        <motion.form className={styles["login-form"]} onSubmit={submitHandler} initial="hidden" animate="visible" exit="exit" variants={loginPageVariants}>
+                        <motion.div className={styles["login-form"]} onSubmit={submitHandler} initial="hidden" animate="visible" exit="exit" variants={loginPageVariants}>
                             <div className={styles["title-section"]}>
                                 <motion.i onClick={() => navigate("/")} whileTap={{ scale: 0.6 }}><IoMdArrowRoundBack /></motion.i>
                                 <h1>Login</h1>
                             </div>
 
-                            <div className={styles["form-section"]}>
+                            <form className={styles["form-section"]}>
                                 <input placeholder='Email' type="email" value={email} onChange={e => setEmail(e.target.value)} />
-                            </div>
-
-                            <div className={styles["form-section"]}>
                                 <input placeholder='Password' type="password" value={password} onChange={e => setPassword(e.target.value)} />
-                            </div>
 
-                            <div className={styles["signup-section"]}>
-                                <div>Don't have an account? <Link to="/signup"><div className='link'>Create One</div></Link></div>
-                            </div>
+                                <div className={styles["signup-section"]}>
+                                    <div>Don't have an account? <Link to="/signup"><div className='link'>Create an account</div></Link></div>
+                                </div>
 
-                            <motion.div className={styles["form-btn"]} onClick={submitHandler} whileTap={{ scale: 0.9 }}>
-                                <AnimatePresence key="loader">
-                                    { isPending && <Loader /> }
-                                </AnimatePresence>
-                                
-                                <AnimatePresence>
-                                    { !isPending && <Text text="Login" /> }
-                                </AnimatePresence>
-                            </motion.div>
-                        </motion.form>
+                                <motion.button className={styles["form-btn"]} onClick={submitHandler} whileTap={{ scale: 0.9 }} type="submit">
+                                    <AnimatePresence key={123}>
+                                        { 
+                                            isPending 
+                                            ?
+                                            <Loader /> 
+                                            :
+                                            <motion.div variants={BtnTextVariants}>OK</motion.div>
+                                        }
+                                    </AnimatePresence>
+                                </motion.button>
+                            </form>
+                        </motion.div>
 
                         <AnimatePresence>
                             {error && <Popup text={error} />}

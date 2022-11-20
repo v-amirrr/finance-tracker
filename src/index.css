@@ -37,6 +37,11 @@ body {
     color: #fff;
 }
 
+::placeholder {
+    font-weight: 400;
+    color: #88888866;
+}
+
 @media (max-width: 780px) {
     html {
         font-size: calc(80% + .8vmin);
@@ -65,7 +70,7 @@ body {
     content: "";
     z-index: -1;
     position: absolute;
-    inset: 92% 0 0 0;
+    inset: 100% 0 0 0;
     background-color: #00b7ff;
     transition: inset .2s;
     -webkit-transition: inset .2s;
