@@ -86,7 +86,7 @@ const Signup = () => {
                                 </AnimatePresence>
                                 
                                 <AnimatePresence>
-                                    { !isPending && <Text text="Create" /> }
+                                    { !isPending && <Text text="OK" /> }
                                 </AnimatePresence>
                             </motion.div>
                         </motion.form>
