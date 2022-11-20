@@ -23,18 +23,19 @@
     letter-spacing: -1px;
     white-space: nowrap;
     color: #00b7ff;
+    word-spacing: 5px;
 }
 
 .navbar button {
     border: none;
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
+    border-radius: 16px;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    -ms-border-radius: 16px;
+    -o-border-radius: 16px;
     font-size: 1.1rem;
-    font-weight: 900;
-    letter-spacing: -.5px;
+    letter-spacing: -1px;
+    font-weight: 600;
     padding: .5rem;
     cursor: pointer;
     background-color: #202020;
