@@ -69,14 +69,12 @@ const Login = () => {
                                 </div>
 
                                 <motion.button className={styles["form-btn"]} onClick={submitHandler} whileTap={{ scale: 0.9 }} type="submit">
-                                    <AnimatePresence key={123}>
-                                        { 
-                                            isPending 
-                                            ?
-                                            <Loader /> 
-                                            :
-                                            <motion.div variants={BtnTextVariants}>OK</motion.div>
-                                        }
+                                    <AnimatePresence key="loader">
+                                        { isPending && <Loader /> }
+                                    </AnimatePresence>
+                                    
+                                    <AnimatePresence>
+                                        { !isPending && <Text text="OK" /> }
                                     </AnimatePresence>
                                 </motion.button>
                             </form>
