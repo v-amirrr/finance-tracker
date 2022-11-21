@@ -35,7 +35,7 @@ const Navbar = () => {
                 </motion.div>
 
                 <motion.div variants={navbarBtnVariants}>
-                    <motion.button onClick={() => navigate("/logout-confirmation")} whileTap={{ scale: 0.9 }}>LOGOUT</motion.button>
+                    <motion.button onClick={() => navigate("/logout-confirmation")} whileTap={{ scale: 0.9 }}>Logout</motion.button>
                 </motion.div>
             </motion.div>
         </>
