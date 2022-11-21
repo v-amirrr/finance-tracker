@@ -32,12 +32,12 @@ export const useCollection = (collection, _query, _orderBy) => {
             setError(null);
             
             if (result.length == 0) {
-                setError("There Is No Transaction!");
+                setError("There's no transaction!");
             }
 
         }, (error) => {
             console.log(error);
-            setError("Couldn't Fetch the Data");
+            setError("Couldn't fetch the data");
         });
 
         return () => unsubscribe();
