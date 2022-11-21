@@ -39,10 +39,10 @@ const LogoutConfirmation = () => {
     return (
         <>
             <motion.div className={styles["logout-confirmation"]} initial="hidden" animate="visible" exit="exit" variants={confirmationVariants}>
-                <motion.p variants={confirmatioPVariants}>Are You Srue That You Want To Logout From Your Account{user && ` ,${user.displayName}`}?</motion.p>
+                <motion.p variants={confirmatioPVariants}>Are You Srue That You Want To Logout From Your Account{user && `, ${user.displayName}`}?</motion.p>
                 <motion.div className={styles["buttons"]} variants={confirmatioBtnVariants}>
-                    <motion.div onClick={logout} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>Yes, Logout.</motion.div>
-                    <motion.div onClick={() => navigate("/")} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>No, Take Me Back To The Home Page.</motion.div>
+                    <motion.div onClick={logout} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>Logout</motion.div>
+                    <motion.div onClick={() => navigate("/")} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>Go Back To Home</motion.div>
                 </motion.div>
 
                 <AnimatePresence>
