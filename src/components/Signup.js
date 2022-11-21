@@ -54,42 +54,34 @@ const Signup = () => {
                     <LogoutRedirect />
                     :
                     <>
-                        <motion.form className={styles["signup-form"]} initial="hidden" animate="visible" exit="exit" variants={signupPageVariants}>
+                        <motion.div className={styles["signup-form"]} initial="hidden" animate="visible" exit="exit" variants={signupPageVariants}>
                             <div className={styles["title-section"]}>
                                 <motion.i onClick={() => navigate("/login")} whileTap={{ scale: 0.6 }}><IoMdArrowRoundBack /></motion.i>
                                 <h1>Sign Up</h1>
                             </div>
 
-                            <div className={styles["form-section"]}>
+                            <form className={styles["form-section"]}>
                                 <input placeholder='Name' type="text" value={name} onChange={e => setName(e.target.value)} />
-                            </div>
+                                <input placeholder='Email' type="email" value={email} onChange={e => setEmail(e.target.value)} />
+                                <input placeholder='Password' type="password" value={password} onChange={e => setRepassword(e.target.value)} />
+                                <input placeholder='Confirm' type="password" value={repassword} onChange={e => setPassword(e.target.value)} />
 
-                            <div className={styles["form-section"]}>
-                                <input placeholder='Email' type="text" value={email} onChange={e => setEmail(e.target.value)} />
-                            </div>
+                                <div className={styles["login-section"]}>
+                                    <div>Don't have an account? <Link to="/signup"><div className='link'>Create an account</div></Link></div>
+                                </div>
 
-                            <div className={styles["form-section"]}>
-                                <input placeholder='Password' type="password" value={password} onChange={e => setPassword(e.target.value)} />
-                            </div>
+                                <motion.button className={styles["form-btn"]} onClick={submitHandler} whileTap={{ scale: 0.9 }} type="submit">
+                                    <AnimatePresence key="loader">
+                                        { isPending && <Loader /> }
+                                    </AnimatePresence>
+                                    
+                                    <AnimatePresence>
+                                        { !isPending && <Text text="OK" /> }
+                                    </AnimatePresence>
+                                </motion.button>
+                            </form>
 
-                            <div className={styles["form-section"]}>
-                                <input placeholder='Confirm' type="password" value={repassword} onChange={e => setRepassword(e.target.value)} />
-                            </div>
-
-                            <div className={styles["login-section"]}>
-                                <div>Already have an account? <Link to="/login"><div className='link'>Login</div></Link></div>
-                            </div>
-
-                            <motion.div className={styles["form-btn"]} onClick={submitHandler} whileTap={{ scale: 0.9 }}>
-                                <AnimatePresence key="loader">
-                                    { isPending && <Loader /> }
-                                </AnimatePresence>
-                                
-                                <AnimatePresence>
-                                    { !isPending && <Text text="OK" /> }
-                                </AnimatePresence>
-                            </motion.div>
-                        </motion.form>
+                        </motion.div>
 
                         <AnimatePresence>
                             {error && <Popup text={error} />}
