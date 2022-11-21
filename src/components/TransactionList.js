@@ -32,8 +32,8 @@ const TransactionList = ({ transactions, error }) => {
                         &&
                         transactions.map(item => (
                             <motion.div className={styles["item"]} key={item.id} initial="hidden" animate="visible" exit="exit" variants={listItemsVariants}>
-                                <p>{item.name}</p>
-                                <p>${item.amount}</p>
+                                <p className={styles["item-name"]}>{item.name}</p>
+                                <p className={styles["item-amount"]}>${item.amount}</p>
                                 <div onClick={() => deleteDocument(item.id)}><FaTrash /></div>
                             </motion.div>
                         ))
@@ -43,7 +43,7 @@ const TransactionList = ({ transactions, error }) => {
                         error
                         &&
                         <motion.div key="error" className={styles["item"]} initial="hidden" animate="visible" exit="exit" variants={listItemsVariants}>
-                            <p>{error}</p>
+                            <p className={styles["item-error"]}>{error}</p>
                         </motion.div>
                     }
                 </AnimatePresence>

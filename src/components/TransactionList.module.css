@@ -21,7 +21,7 @@
 .item {
     position: relative;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     border-radius: 16px;
     -webkit-border-radius: 16px;
@@ -30,7 +30,8 @@
     -o-border-radius: 16px;
     background-color: #ffffff0b;
     width: 100%;
-    padding: 1rem;
+    overflow: hidden;
+    padding: 1rem .2rem;
     margin: .2rem 0;
     color: #e0e0e0;
     font-size: 1rem;
@@ -38,9 +39,27 @@
     font-family: 'Outfit', sans-serif;
 }
 
-.item p {
-    white-space: nowrap;
+.item-name {
     margin: 0 .3rem;
+    max-width: 60%;
+    overflow: hidden;
+    word-wrap: break-word;
+}
+
+.item-amount {
+    margin: 0 .3rem;
+    max-width: 20%;
+    overflow: hidden;
+    word-wrap: break-word;
+}
+
+.item-error {
+    margin: 0 .3rem;
+    overflow: hidden;
+    overflow: hidden;
+    word-wrap: break-word;
+    width: 100%;
+    text-align: center;
 }
 
 .item div {
