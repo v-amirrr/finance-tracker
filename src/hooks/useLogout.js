@@ -29,7 +29,6 @@ export const useLogout = () => {
                 setError(null);
                 navigate("/", { replace: true });
                 setIsPending(false);
-                
             }
         }
 

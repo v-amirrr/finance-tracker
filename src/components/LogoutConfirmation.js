@@ -3,7 +3,7 @@ import styles from "./LogoutConfirmation.module.css";
 
 import Popup from './Popup';
 
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Navigate } from 'react-router-dom';
 
 import useAuthContext from '../hooks/useAuthContext';
 
@@ -38,18 +38,30 @@ const LogoutConfirmation = () => {
 
     return (
         <>
-            <motion.div className={styles["logout-confirmation"]} initial="hidden" animate="visible" exit="exit" variants={confirmationVariants}>
-                <motion.p variants={confirmatioPVariants}>Are You Srue That You Want To Logout From Your Account{user && `, ${user.displayName}`}?</motion.p>
-                <motion.div className={styles["buttons"]} variants={confirmatioBtnVariants}>
-                    <motion.div onClick={logout} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>Logout</motion.div>
-                    <motion.div onClick={() => navigate("/")} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>Go Back To Home</motion.div>
+            {
+                user
+                ? 
+                <motion.div className={styles["logout-confirmation"]} initial="hidden" animate="visible" exit="exit" variants={confirmationVariants}>
+                    <motion.p variants={confirmatioPVariants}>Are You Srue That You Want To Logout From Your Account{user && `, ${user.displayName}`}?</motion.p>
+                    <motion.div className={styles["buttons"]} variants={confirmatioBtnVariants}>
+                        <motion.div onClick={logout} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>Logout</motion.div>
+                        <motion.div onClick={() => navigate("/")} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>Go Back To Home</motion.div>
+                    </motion.div>
+
+                    <AnimatePresence>
+                        {error && <Popup text={error} />}
+                    </AnimatePresence>
+
                 </motion.div>
-
-                <AnimatePresence>
-                    {error && <Popup text={error} />}
-                </AnimatePresence>
-
-            </motion.div>
+                :
+                <motion.div className={styles["logout-confirmation"]} initial="hidden" animate="visible" exit="exit" variants={confirmationVariants}>
+                    <motion.p variants={confirmatioPVariants}>You haven't logged in yet.</motion.p>
+                    <motion.div className={styles["buttons"]} variants={confirmatioBtnVariants}>
+                        <motion.div onClick={() => navigate("/login")} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>Login</motion.div>
+                        <motion.div onClick={() => navigate("/")} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>Go Back To Home</motion.div>
+                    </motion.div>
+                </motion.div>
+            }
         </>
     );
 };
