@@ -1,11 +1,17 @@
 .after-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
 }
 
 .after-login-main {
-    margin: 3rem;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    width: 80%;
+    height: 100%;
 }
 
 @media (max-width: 880px) {

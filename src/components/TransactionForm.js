@@ -55,8 +55,8 @@ const TransactionForm = ({ uid }) => {
                 </motion.h5>
 
                 <div className={styles["form-inputs"]}>
-                    <motion.input variants={formInput1Variants} placeholder='Transaction Name' type="text" value={name} onChange={e => setName(e.target.value)} />
-                    <motion.input variants={formInput2Variants} placeholder='Amount $' type="number" value={amount} onChange={e => setAmount(e.target.value)} />
+                    <motion.input variants={formInput1Variants} placeholder='Name' type="text" value={name} onChange={e => setName(e.target.value)} />
+                    <motion.input variants={formInput2Variants} placeholder='Amount' type="number" value={amount} onChange={e => setAmount(e.target.value)} />
                 </div>
 
                 <motion.button variants={formBtnVariants} className={styles["form-btn"]} onClick={transactionAdder} whileTap={{ scale: 0.8 }}>

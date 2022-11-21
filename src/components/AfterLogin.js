@@ -25,7 +25,6 @@ const AfterLogin = () => {
                     <Navbar />
 
                     <div className={styles["after-login-main"]}>
-                    
                         <div className={styles["list"]}>
                             <TransactionList transactions={documents} error={error} />
                         </div>

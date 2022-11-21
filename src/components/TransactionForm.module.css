@@ -1,12 +1,10 @@
 .form {
-    width: fit-content;
-    padding: 2rem 1rem;
+    padding: 2rem .5rem;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: #000000be;
-    border: none;
+    background: #000000eb;
     box-shadow: 0 4px 30px #00000054;
     border-radius: 16px;
     -webkit-border-radius: 16px;
