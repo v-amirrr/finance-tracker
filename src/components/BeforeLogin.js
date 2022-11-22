@@ -21,7 +21,7 @@ const BeforeLogin = () => {
                     <h1>Fianace Tracker</h1>
                     <Link to="/login">
                         <motion.div className={styles["btn"]} whileTap={{ scale: 0.9 }}>
-                            let's go
+                            let's start
                         </motion.div>
                     </Link>
                 </motion.div>
