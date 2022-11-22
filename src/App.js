@@ -7,6 +7,7 @@ import Login from './components/Login';
 import Loader from './components/Loader';
 import HomePages from './components/HomePages';
 import LogoutConfirmation from './components/LogoutConfirmation';
+import WarningPopup from "./components/WarningPopup";
 
 import AuthContextProvider from './context/AuthContext';
 
@@ -20,6 +21,7 @@ const App = () => {
         <>
             <AuthContextProvider>
                     <AnimatePresence exitBeforeEnter>
+                        <WarningPopup />
                         <Routes location={location} key={location.key}>
                             <Route path='/' element={<HomePages />} />
                             <Route path='signup' element={<Signup />} />
