@@ -3,18 +3,22 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: #000000eb;
+    background: #00000099;
     width: 100vw;
     height: 100vh;
+    user-select: none;
+    backdrop-filter: blur(5px) saturate(100%);
+    -webkit-backdrop-filter: blur(5px) saturate(100%);
 }
 
 .logout-confirmation p {
     text-align: center;
     font-size: 1.3rem;
+    line-height: 1.5;
 }
 
 .buttons {
-    margin: 2rem;
+    margin: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;

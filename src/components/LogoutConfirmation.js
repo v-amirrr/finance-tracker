@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from "./LogoutConfirmation.module.css";
 
 import Popup from './Popup';
 
-import { useNavigate, Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import useAuthContext from '../hooks/useAuthContext';
 
@@ -13,7 +13,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const confirmationVariants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.2, type: "tween", when: "beforeChildren" } },
+    visible: { opacity: 1, transition: { duration: 0.2, type: "tween" } },
     exit: { opacity: 0, transition: { duration: 0.2, type: "tween", when: "afterChildren" } }
 }
 
@@ -36,13 +36,26 @@ const LogoutConfirmation = () => {
 
     const navigate = useNavigate();
 
+    const [pageShow, setPageShow] = useState(false);
+    const [username, setUsername] = useState();
+
+    useEffect(() => {
+        if (user) {
+            setPageShow(true);
+            setUsername(`, ${user.displayName}`);
+        } else {
+            setPageShow(false);
+            setUsername("");
+        }
+    }, []);
+
     return (
         <>
             {
-                user
-                ? 
+                pageShow
+                ?
                 <motion.div className={styles["logout-confirmation"]} initial="hidden" animate="visible" exit="exit" variants={confirmationVariants}>
-                    <motion.p variants={confirmatioPVariants}>Are You Srue That You Want To Logout From Your Account{user && `, ${user.displayName}`}?</motion.p>
+                    <motion.p variants={confirmatioPVariants}>Are You Srue That You Want To Logout From Your Account{pageShow && username}?</motion.p>
                     <motion.div className={styles["buttons"]} variants={confirmatioBtnVariants}>
                         <motion.div onClick={logout} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>Logout</motion.div>
                         <motion.div onClick={() => navigate("/")} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>Go Back To Home</motion.div>
