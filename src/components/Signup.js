@@ -70,7 +70,7 @@ const Signup = () => {
                                     <div>You Already Have an Account? <Link to="/login"><div className='link'>Login</div></Link></div>
                                 </div>
 
-                                <motion.button className={styles["form-btn"]} onClick={submitHandler} whileTap={{ scale: 0.9 }} type="submit">
+                                <motion.button className={styles["form-btn"]} onClick={submitHandler} whileTap={{ scale: 0.9 }} type="submit" disabled={isPending ? true : false}>
                                     <AnimatePresence key="loader">
                                         { isPending && <Loader /> }
                                     </AnimatePresence>

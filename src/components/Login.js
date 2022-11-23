@@ -68,7 +68,7 @@ const Login = () => {
                                     <div>Don't have an account? <Link to="/signup"><div className='link'>Create an account</div></Link></div>
                                 </div>
 
-                                <motion.button className={styles["form-btn"]} onClick={submitHandler} whileTap={{ scale: 0.9 }} type="submit">
+                                <motion.button className={styles["form-btn"]} onClick={submitHandler} whileTap={{ scale: 0.9 }} type="submit" disabled={isPending ? true : false}>
                                     <AnimatePresence key="loader">
                                         { isPending && <Loader /> }
                                     </AnimatePresence>

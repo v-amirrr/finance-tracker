@@ -35,7 +35,7 @@ const TransactionList = ({ transactions, error }) => {
                                 <motion.div className={styles["item"]} key={item.id} initial="hidden" animate="visible" exit="exit" variants={listItemsVariants}>
                                     <p className={styles["item-name"]}>{item.name}</p>
                                     <p className={styles["item-amount"]}>${item.amount}</p>
-                                    <div onClick={() => deleteDocument(item.id)}><FaTrash /></div>
+                                    <motion.div onClick={() => deleteDocument(item.id)} whileTap={{ scale: 0.8 }}><FaTrash /></motion.div>
                                 </motion.div>
                             ))
                         }
