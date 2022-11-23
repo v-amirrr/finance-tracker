@@ -26,27 +26,29 @@ const TransactionList = ({ transactions, error }) => {
     return (
         <>
             <motion.div className={styles["list"]} initial="hidden" animate="visible" exit="exit" variants={transactionListVariants}>
-                <AnimatePresence>
-                    {
-                        transactions
-                        &&
-                        transactions.map(item => (
-                            <motion.div className={styles["item"]} key={item.id} initial="hidden" animate="visible" exit="exit" variants={listItemsVariants}>
-                                <p className={styles["item-name"]}>{item.name}</p>
-                                <p className={styles["item-amount"]}>${item.amount}</p>
-                                <div onClick={() => deleteDocument(item.id)}><FaTrash /></div>
+                <div className={styles["list-content"]}>
+                    <AnimatePresence>
+                        {
+                            transactions
+                            &&
+                            transactions.map(item => (
+                                <motion.div className={styles["item"]} key={item.id} initial="hidden" animate="visible" exit="exit" variants={listItemsVariants}>
+                                    <p className={styles["item-name"]}>{item.name}</p>
+                                    <p className={styles["item-amount"]}>${item.amount}</p>
+                                    <div onClick={() => deleteDocument(item.id)}><FaTrash /></div>
+                                </motion.div>
+                            ))
+                        }
+                        
+                        {
+                            error
+                            &&
+                            <motion.div key="error" className={styles["item"]} initial="hidden" animate="visible" exit="exit" variants={listItemsVariants}>
+                                <p className={styles["item-error"]}>{error}</p>
                             </motion.div>
-                        ))
-                    }
-                    
-                    {
-                        error
-                        &&
-                        <motion.div key="error" className={styles["item"]} initial="hidden" animate="visible" exit="exit" variants={listItemsVariants}>
-                            <p className={styles["item-error"]}>{error}</p>
-                        </motion.div>
-                    }
-                </AnimatePresence>
+                        }
+                    </AnimatePresence>
+                </div>
             </motion.div>
         </>
     );

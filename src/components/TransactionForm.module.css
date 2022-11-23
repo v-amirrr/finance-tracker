@@ -79,15 +79,3 @@
 .form-btn:hover {
     background-color: #ffffff15;
 }
-
-@media (max-width: 880px) {
-    .form {
-        width: 20rem;
-    }
-}
-
-@media (max-width: 380px) {
-    .form {
-        width: 15rem;
-    }
-}
