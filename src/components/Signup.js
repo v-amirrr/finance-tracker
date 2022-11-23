@@ -67,7 +67,7 @@ const Signup = () => {
                                 <input placeholder='Confirm' type="password" value={repassword} onChange={e => setPassword(e.target.value)} />
 
                                 <div className={styles["login-section"]}>
-                                    <div>Don't have an account? <Link to="/signup"><div className='link'>Create an account</div></Link></div>
+                                    <div>You Already Have an Account? <Link to="/login"><div className='link'>Login</div></Link></div>
                                 </div>
 
                                 <motion.button className={styles["form-btn"]} onClick={submitHandler} whileTap={{ scale: 0.9 }} type="submit">
