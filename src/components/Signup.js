@@ -63,8 +63,8 @@ const Signup = () => {
                             <form className={styles["form-section"]}>
                                 <input placeholder='Name' type="text" value={name} onChange={e => setName(e.target.value)} />
                                 <input placeholder='Email' type="email" value={email} onChange={e => setEmail(e.target.value)} />
-                                <input placeholder='Password' type="password" value={password} onChange={e => setRepassword(e.target.value)} />
-                                <input placeholder='Confirm' type="password" value={repassword} onChange={e => setPassword(e.target.value)} />
+                                <input placeholder='Password' type="password" value={password} onChange={e => setPassword(e.target.value)} />
+                                <input placeholder='Confirm' type="password" value={repassword} onChange={e => setRepassword(e.target.value)} />
 
                                 <div className={styles["login-section"]}>
                                     <div>You Already Have an Account? <Link to="/login"><div className='link'>Login</div></Link></div>
